@@ -1,0 +1,1349 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <title>POST BURRIED+SINGLE CRANK+GROUNTING PANEL</title>
+  <link rel="stylesheet" href="burried_single_crank_page-2.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+
+
+<div id="container">
+  <img id="drawing" src="DRAWING/DRAWING-1.jpg" alt="drawing">
+<p>POST BURRIED+SINGLE CRANK+GROUNTING PANEL</p>
+
+  <label id="result1"></label>
+  <label id="result2"></label>
+  <label id="result3"></label>
+  <label id="result4"></label>
+  <label id="result5"></label>
+  <label id="result6"></label>
+  <label id="result7"></label>
+  <label id="result8"></label>
+  <label id="result9"></label>
+  <label id="result10"></label>
+  <label id="result11"></label> <!--ip c/c-->
+  <label id="result12"></label> <!--ip c/c-->
+  <label id="result13"></label> <!--ip c/c-->
+  <label id="result14"></label> <!--ip c/c-->
+  <label id="result15"></label> <!--post height-->
+  <label id="result16"></label> <!--crank height-->
+  <label id="result17"></label> <!--outrigger panel height-->
+  <label id="result18"></label> <!--outrigger panel height-->
+  <label id="result19"></label> <!--outrigger panel height-->
+  <label id="result20"></label> <!--burrid post-->
+  <label id="result21"></label> <!--footing widthFt-->
+  <label id="result22"></label> <!--footing widthFt-->
+  <label id="result23"></label> <!--footing lenghtFt-->
+  <label id="result24"></label> <!--footing lenghtFt-->
+  <label id="result25"></label> <!--footing lenghtFt-->
+  <label id="result26"></label> <!--footing lenghtFt-->
+  <label id="result27"></label> <!--footing lenghtFt-->
+  <label id="result28"></label> <!--footing heightFt-->
+  <label id="result29"></label> <!--footing heightFt-->
+  <label id="result30"></label> <!--main panel horimesh-->
+  <label id="result31"></label> <!--main panel horimesh-->
+  <label id="result32"></label> <!--main panel verical mesh-->
+  <label id="result33"></label> <!--main panel verical mesh-->
+  <label id="result34"></label> <!--outrigger panel horimesh-->
+  <label id="result35"></label> <!--outrigger panel horimesh-->
+  <label id="result36"></label> <!--outrigger panel vertical-->
+  <label id="result37"></label> <!--outrigger panel horimesh-->
+  <label id="result38"></label> <!--outrigger panel horimesh-->
+  <label id="result39"></label> <!--outrigger panel vertical-->
+  <label id="result40"></label> <!--crimp1-->
+  <label id="result41"></label> <!--crimp2-->
+
+
+
+  <label id="finalResult1"></label>
+  <label id="finalResult2"></label>
+  <label id="finalResult3"></label>
+  <label id="finalResult4"></label>
+  <label id="finalResult5"></label>
+  <label id="finalResult6"></label>
+  <label id="finalResult7"></label>
+  <label id="finalResult8"></label>
+  <label id="finalResult9"></label>
+  <label id="finalResult10"></label>
+  <label id="finalResult11"></label>
+
+</div>
+
+
+
+<script>
+let value1 = localStorage.getItem("result1Value");
+let value3 = localStorage.getItem("result3Value");
+let value4 = localStorage.getItem("result4Value"); 
+let value5 = localStorage.getItem("result5Value"); 
+let value6 = localStorage.getItem("result6Value"); 
+let value7 = localStorage.getItem("result7Value"); 
+let value9 = localStorage.getItem("result9Value"); 
+let value10 = localStorage.getItem("result10Value"); 
+let value11 = localStorage.getItem("result11Value"); // ip c/c
+let value15 = localStorage.getItem("result15Value"); // post height
+let value16 = localStorage.getItem("result16Value"); // crank height
+let value17 = localStorage.getItem("result17Value"); // outrigger panel height
+let value20 = localStorage.getItem("result20Value"); // burrid post
+let value21 = localStorage.getItem("result21Value"); // footing width
+let value23 = localStorage.getItem("result23Value"); // footing lenght
+let value28 = localStorage.getItem("result28Value"); // footing height
+let value30 = localStorage.getItem("result30Value"); // main panel horimesh
+let value32 = localStorage.getItem("result32Value"); // main panel vertical mesh
+let value34 = localStorage.getItem("result34Value"); // outrigger panel horimesh
+let value36 = localStorage.getItem("result36Value"); // outrigger panel vertical mesh
+let value37 = localStorage.getItem("result37Value"); // grounting panel panel horimesh
+let value39 = localStorage.getItem("result39Value"); // grounting panel panel vertical
+let value40 = localStorage.getItem("result40Value"); // crimp1
+let value41 = localStorage.getItem("result41Value"); // crimp2
+
+
+document.getElementById("result1").innerText = value1 ;
+document.getElementById("result2").innerText =  value1;
+document.getElementById("result3").innerText =  value3 + " MM WIRE C/C";
+document.getElementById("result4").innerText =  value4 + " MM WIRE C/C";
+document.getElementById("result5").innerText =  value5 ;
+document.getElementById("result6").innerText =  value6;
+document.getElementById("result7").innerText =  value7;
+document.getElementById("result8").innerText =  value6;
+document.getElementById("result9").innerText =  value9 + "MM WIRE OUT TO OUT";
+document.getElementById("result10").innerText = value10 + "MM WIRE OUT TO OUT";
+document.getElementById("result11").innerText = value11;// ip c/c
+document.getElementById("result12").innerText = value11;// ip c/c
+document.getElementById("result13").innerText = value11;// ip c/c
+document.getElementById("result14").innerText = value11;// ip c/c
+document.getElementById("result15").innerText = value15;// post height
+document.getElementById("result16").innerText = value16;// crank height
+document.getElementById("result17").innerText = value17;// outrigger panel height
+document.getElementById("result18").innerText = value17;// outrigger panel height
+document.getElementById("result19").innerText = value17;// outrigger panel height
+document.getElementById("result20").innerText = value20;// burrid post
+document.getElementById("result21").innerText = value21;// footing width
+document.getElementById("result22").innerText = value21;// footing width
+document.getElementById("result23").innerText = value23;// footing lenght
+document.getElementById("result24").innerText = value23;// footing lenght
+document.getElementById("result25").innerText = value23;// footing lenght
+document.getElementById("result26").innerText = value23;// footing lenght
+document.getElementById("result27").innerText = value23;// footing lenght
+document.getElementById("result28").innerText = value28;// footing height
+document.getElementById("result29").innerText = value28;// footing height
+document.getElementById("result30").innerText = value30;// main panel horimesh
+document.getElementById("result31").innerText = value30;// main panel horimesh
+document.getElementById("result32").innerText = value32;// main panel vertical mesh
+document.getElementById("result33").innerText = value32;// main panel vertical mesh
+document.getElementById("result34").innerText = value34;// outrigger panel horimesh
+document.getElementById("result35").innerText = value34;// outrigger panel horimesh
+document.getElementById("result36").innerText = value36;// outrigger panel vertical mesh
+document.getElementById("result37").innerText = value37;// grounting panel horimesh
+document.getElementById("result38").innerText = value37;// grounting panel horimesh
+document.getElementById("result39").innerText = value39;// grounting panel verical
+document.getElementById("result40").innerText = "MAIN PANEL CRIMPS- " + value40 + " Nos";// crimp1
+document.getElementById("result41").innerText = "OUTRIGGER PANEL CRIMPS- " + value41 + " Nos";// crimp2
+
+
+let finalResult1 = localStorage.getItem("finalResult1"); 
+let finalResult2 = localStorage.getItem("finalResult2"); 
+let finalResult3 = localStorage.getItem("finalResult3"); 
+let finalResult4 = localStorage.getItem("finalResult4"); 
+let finalResult5 = localStorage.getItem("finalResult5"); 
+let finalResult6 = localStorage.getItem("finalResult6"); 
+let finalResult7 = localStorage.getItem("finalResult7"); 
+let finalResult8 = localStorage.getItem("finalResult8"); 
+let finalResult9 = localStorage.getItem("finalResult9"); 
+let finalResult10 = localStorage.getItem("finalResult10"); 
+
+document.getElementById("finalResult1").innerText = finalResult1;
+document.getElementById("finalResult2").innerText = finalResult2;
+document.getElementById("finalResult3").innerText = finalResult3;
+document.getElementById("finalResult4").innerText = finalResult4;
+document.getElementById("finalResult5").innerText = finalResult5;
+document.getElementById("finalResult6").innerText = finalResult6;
+document.getElementById("finalResult7").innerText = finalResult7;
+document.getElementById("finalResult8").innerText = finalResult8;
+document.getElementById("finalResult9").innerText = finalResult9;
+document.getElementById("finalResult10").innerText = finalResult10;
+document.getElementById("finalResult11").innerText = finalResult9;
+
+</script>
+
+
+<body>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background: #e0f39a;
+    }
+    h1 {background-color: aqua;
+      color: red;
+      text-decoration: underline;
+}
+  </style>
+</head>
+<body>
+
+
+<br> <br><br> <br><br> <br>
+
+        <div class="tab-content active">
+    <h1>Estimation Sheet</h1>       
+    <h2>User Details</h2>       
+    <table id="finalResultsTable1" border="1" cellspacing="0" cellpadding="5">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Customer</th>
+          <th>Project Name</th>
+          <th>Scope</th>
+          <th>Estimation By</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td  id="dateCell"></td>
+         <td id="displayCustomer"></td>
+          <td id="displayProject"></td>
+          <td id="displayScope"></td>
+          <td id="displayEstimator"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="tab-content active">
+    <h2>Post Specifications</h2>       
+    <table id="finalResultsTable2" border="1" cellspacing="0" cellpadding="5">
+      <thead>
+        <tr>
+          <th>Post Profile</th>
+          <th>Main Height from FFL</th>
+          <th>Crank Length_incline</th>
+          <th>Burried from FFL</th>
+          <th>Total Height</th>
+          <th>Total Weight</th>
+          <th>GI Price</th>
+          <th id="finish"></th>
+          <th>Metal Price</th>
+          <th>Fabrication Charge</th>
+          <th>Total/Post Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="postprofile"></td>
+          <td id="postHeight"></td>
+          <td id="Crank"></td>
+          <td id="Burried"></td>
+          <td id="TotalHeight"></td>
+          <td id="TotalWeight"></td>
+          <td id="giprice"></td>
+          <td id="finishprice"></td>
+          <td id="metalprice"></td>
+          <td id="fab_charge"></td>          
+          <td id="totalpostprice"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <div class="tab-content active">
+    <h2>Main Weldmesh Panel Specifications</h2>       
+    <table id="finalResultsTable3" border="1" cellspacing="0" cellpadding="5">
+      <thead>
+        <tr>
+          <th>Length</th>
+          <th>Height</th>
+          <th>Wire Dia</th>
+          <th>Hori.Mesh</th>
+          <th>Verti.Mesh</th>
+          <th>Actual Weight</th>
+          <th>With Scrap Weight 8%</th>
+          <th>Total/Main Weldmesh Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="mainpanellength"></td>
+          <td id="mainpanelheight"></td>
+          <td id="wire1"></td>
+          <td id="hori1"></td>
+          <td id="verti1"></td>
+          <td id="TotalmainpanelWeight"></td>
+          <td id="Total_mainpanel_Weight_with_scrap"></td>
+          <td id="Total/Main_Weldmesh_Price"></td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+    <div class="tab-content active">
+    <h2>Outrigger Weldmesh Panel Specifications</h2>       
+    <table id="finalResultsTable4" border="1" cellspacing="0" cellpadding="5">
+      <thead>
+        <tr>
+          <th>Length</th>
+          <th>Height</th>
+          <th>Wire Dia</th>
+          <th>Hori.Mesh</th>
+          <th>Verti.Mesh</th>
+          <th>Actual Weight</th>
+          <th>With Scrap Weight 8%</th>
+          <th>Total/Main Weldmesh Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="outpanellength"></td>
+          <td id="outpanelheight"></td>
+          <td id="wire2"></td>
+          <td id="hori2"></td>
+          <td id="verti2"></td>
+          <td id="TotaloutpanelWeight"></td>
+          <td id="Total_outpanel_Weight_with_scrap"></td>
+          <td id="Total/out_Weldmesh_Price"></td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+    <div class="tab-content active">
+    <h2>Grouting Weldmesh Panel Specifications</h2>       
+    <table id="finalResultsTable5" border="1" cellspacing="0" cellpadding="5">
+      <thead>
+        <tr>
+          <th>Length</th>
+          <th>Height</th>
+          <th>Wire Dia</th>
+          <th>Hori.Mesh</th>
+          <th>Verti.Mesh</th>
+          <th>Actual Weight</th>
+          <th>With Scrap Weight 8%</th>
+          <th>Total/Main Weldmesh Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="grtpanellength"></td>
+          <td id="grtpanelheight"></td>
+          <td id="wire3"></td>
+          <td id="hori3"></td>
+          <td id="verti3"></td>
+          <td id="TotalgrtpanelWeight"></td>
+          <td id="Total_grtpanel_Weight_with_scrap"></td>
+          <td id="Total/grt_Weldmesh_Price"></td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <div class="tab-content active">
+    <h2>Footting Specifications</h2>       
+    <table id="finalResultsTable6" border="1" cellspacing="0" cellpadding="5">
+      <thead>
+         <tr>
+                 <th>Footing Length</th>
+                 <th>Footing Width</th>
+                 <th>Footing Height</th> 
+                 <th>Footing Volume</th>   
+                 <th>Footing Weight</th>
+                 <th>Footing Price</th>          
+            </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="result74"></td>
+          <td id="result75"></td>
+          <td id="result76"></td>
+          <td id="result77"></td>
+          <td id="result78"></td>
+          <td id="result79"></td>                    
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <div class="tab-content active">
+    <h2>Accessories Specifications</h2>       
+    <table id="finalResultsTable7" border="1" cellspacing="0" cellpadding="5">
+      <thead>
+         <tr>
+             <th>Fixator + Bolt For Fixator +Spring washer + Breackable nut +PVC threded dome nut cap/(Post)</th>
+              <th>Double Strecher Clamp For Mesh Tighting/(Post)</th>
+                <th>Hog Ring (3.5mm DIA SS304) Grouting Panel (Total)</th>
+                <th>Hog Ring (3.5mm DIA SS304) Outrigger Panel(Total)</th>              
+            </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="fixatorqty"></td>
+          <td id="StrecherClampqty"></td>
+          <td id="clipqty"></td>
+          <td id="clipqty2"></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="fixatorprice"></td>
+          <td id="StrecherClampprice"></td>
+          <td id="clipprice"></td>
+          <td id="clipprice2"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+<div class="tab-content active">
+  <h2>Total Details</h2>       
+  <table id="finalResultsTable8" border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Total Post QTY</th>
+        <th>Total Main WM Panel</th>
+        <th>Total Main Ourigg. Panel</th>
+        <th>Total Main Grout. Panel</th>
+        <th>Total Main Footting</th>
+        <th>Accessories</th>  
+        <th>Rate/LM.</th>  
+        <th  style="font-weight: bold;background-color: red;color: white;">Total LM</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="result69"></td>
+        <td id="result70"></td>
+        <td id="result71"></td>
+        <td id="result72"></td>
+        <td id="result73"></td>
+        <td id="result74"></td> 
+        <td >FENCE</td> 
+        <td id="result68"  style="font-weight: bold;"></td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td id="result80"></td>
+        <td id="result81"></td>
+        <td id="result82"></td>
+        <td id="result83"></td>
+        <td id="result84"></td>
+        <td id="result85"></td>
+        <td id="result127"></td>          
+        <td id="result86" style="font-weight: bold;background-color: red;color: white;"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="tab-content active">
+    <h1>Budget Sheet</h1>       
+    <h2>User Details</h2>       
+    <table id="finalResultsTable9" border="1" cellspacing="0" cellpadding="5">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Customer</th>
+          <th>Project Name</th>
+          <th>Scope</th>
+          <th>Estimation By</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td  id="dateCell3"></td>
+         <td id="displayCustomer1"></td>
+          <td id="displayProject1"></td>
+          <td id="displayScope1"></td>
+          <td id="displayEstimator1"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="tab-content active">
+    <h2>Post Specifications</h2>       
+    <table id="finalResultsTable10" border="1" cellspacing="0" cellpadding="5">
+      <thead>
+        <tr>
+          <th>Post Profile</th>
+          <th>Main Height from FFL</th>
+          <th>Crank Length_incline</th>
+          <th>Burried from FFL</th>
+          <th>Total Height</th>
+          <th>Total Weight</th>
+          <th>GI Price</th>
+          <th id="finish1"></th>
+          <th>Metal Price</th>
+          <th>Fabrication Charge</th>
+          <th>Total/Post Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="postprofile1"></td>
+          <td id="postHeight1"></td>
+          <td id="Crank1"></td>
+          <td id="Burried1"></td>
+          <td id="TotalHeight1"></td>
+          <td id="TotalWeight1"></td>
+          <td id="giprice1"></td>
+          <td id="finishprice1"></td>
+          <td id="metalprice1"></td>
+          <td id="fab_charge1"></td>          
+          <td id="totalpostprice1"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <div class="tab-content active">
+    <h2>Main Weldmesh Panel Specifications</h2>       
+    <table id="finalResultsTable11" border="1" cellspacing="0" cellpadding="5">
+      <thead>
+        <tr>
+          <th>Length</th>
+          <th>Height</th>
+          <th>Wire Dia</th>
+          <th>Hori.Mesh</th>
+          <th>Verti.Mesh</th>
+          <th>Actual Weight</th>
+          <th>With Scrap Weight 8%</th>
+          <th>Total/Main Weldmesh Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="mainpanellength1"></td>
+          <td id="mainpanelheight1"></td>
+          <td id="1wire1"></td>
+          <td id="1hori1"></td>
+          <td id="1verti1"></td>
+          <td id="TotalmainpanelWeight1"></td>
+          <td id="Total_mainpanel_Weight_with_scrap1"></td>
+          <td id="Total/Main_Weldmesh_Price1"></td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+    <div class="tab-content active">
+    <h2>Outrigger Weldmesh Panel Specifications</h2>       
+    <table id="finalResultsTable12" border="1" cellspacing="0" cellpadding="5">
+      <thead>
+        <tr>
+          <th>Length</th>
+          <th>Height</th>
+          <th>Wire Dia</th>
+          <th>Hori.Mesh</th>
+          <th>Verti.Mesh</th>
+          <th>Actual Weight</th>
+          <th>With Scrap Weight 8%</th>
+          <th>Total/Main Weldmesh Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="1outpanellength"></td>
+          <td id="1outpanelheight"></td>
+          <td id="1wire2"></td>
+          <td id="1hori2"></td>
+          <td id="1verti2"></td>
+          <td id="1TotaloutpanelWeight"></td>
+          <td id="1Total_outpanel_Weight_with_scrap"></td>
+          <td id="1Total/out_Weldmesh_Price"></td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+    <div class="tab-content active">
+    <h2>Grouting Weldmesh Panel Specifications</h2>       
+    <table id="finalResultsTable13" border="1" cellspacing="0" cellpadding="5">
+      <thead>
+        <tr>
+          <th>Length</th>
+          <th>Height</th>
+          <th>Wire Dia</th>
+          <th>Hori.Mesh</th>
+          <th>Verti.Mesh</th>
+          <th>Actual Weight</th>
+          <th>With Scrap Weight 8%</th>
+          <th>Total/Main Weldmesh Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="1grtpanellength"></td>
+          <td id="1grtpanelheight"></td>
+          <td id="1wire3"></td>
+          <td id="1hori3"></td>
+          <td id="1verti3"></td>
+          <td id="1TotalgrtpanelWeight"></td>
+          <td id="1Total_grtpanel_Weight_with_scrap"></td>
+          <td id="1Total/grt_Weldmesh_Price"></td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <div class="tab-content active">
+    <h2>Footting Specifications</h2>       
+    <table id="finalResultsTable14" border="1" cellspacing="0" cellpadding="5">
+      <thead>
+         <tr>
+                 <th>Footing Length</th>
+                 <th>Footing Width</th>
+                 <th>Footing Height</th> 
+                 <th>Footing Volume</th>   
+                 <th>Footing Weight</th>
+                 <th>Footing Price</th>          
+            </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="1result74"></td>
+          <td id="1result75"></td>
+          <td id="1result76"></td>
+          <td id="1result77"></td>
+          <td id="1result78"></td>
+          <td id="1result79"></td>                    
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <div class="tab-content active">
+    <h2>Accessories Specifications</h2>       
+    <table id="finalResultsTable15" border="1" cellspacing="0" cellpadding="5">
+      <thead>
+         <tr>
+             <th>Fixator + Bolt For Fixator +Spring washer + Breackable nut +PVC threded dome nut cap/(Post)</th>
+              <th>Double Strecher Clamp For Mesh Tighting/(Post)</th>
+                <th>Hog Ring (3.5mm DIA SS304) Grouting Panel (Total)</th>
+                <th>Hog Ring (3.5mm DIA SS304) Outrigger Panel(Total)</th>              
+            </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="1fixatorqty"></td>
+          <td id="1StrecherClampqty"></td>
+          <td id="1clipqty"></td>
+          <td id="1clipqty2"></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="1fixatorprice"></td>
+          <td id="1StrecherClampprice"></td>
+          <td id="1clipprice"></td>
+          <td id="1clipprice2"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+<div class="tab-content active">
+  <h2>Total Details</h2>       
+  <table id="finalResultsTable16" border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Total Post QTY</th>
+        <th>Total Main WM Panel</th>
+        <th>Total Main Ourigg. Panel</th>
+        <th>Total Main Grout. Panel</th>
+        <th>Total Main Footting</th>
+        <th>Accessories</th>  
+        <th>Rate/LM.</th>  
+        <th  style="font-weight: bold;background-color: green;color: white;">Total LM</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="1result69"></td>
+        <td id="1result70"></td>
+        <td id="1result71"></td>
+        <td id="1result72"></td>
+        <td id="1result73"></td>
+        <td id="1result74"></td> 
+        <td >FENCE</td> 
+        <td id="1result68"  style="font-weight: bold;"></td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td id="1result80"></td>
+        <td id="1result81"></td>
+        <td id="1result82"></td>
+        <td id="1result83"></td>
+        <td id="1result84"></td>
+        <td id="1result85"></td>
+        <td id="result128"></td>         
+        <td id="1result86" style="font-weight: bold;background-color: green;color: white;"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br><br><br><br><br><br>
+    <div class="tab-content active">
+    <h1>Bill of Quantity</h1>       
+    <table id="finalResultsTable17" border="1" cellspacing="0" cellpadding="5">
+      <thead>
+        <tr>
+        <th>Sr N.</th>
+        <th>Item Code</th>
+        <th>Description</th>
+        <th>Additional Info</th>
+        <th>Qty</th>
+        <th>UOM</th>
+        <th>Weight</th>
+        <th>PR Quantity</th>
+        <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td id=""></td>
+          <td id="postprofile1"></td>
+          <td >MS S275 JR</td>
+          <td id="result106"></td>
+          <td >Nos</td>
+          <td id="result92"></td>
+          <td id=""></td>
+          <td id=""></td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>2</td>
+          <td id=""></td>
+          <td id="result93"></td>
+          <td >MS-GI</td>
+          <td id="result94"></td>
+          <td >Nos</td>
+          <td id="result95"></td>
+          <td id=""></td>
+          <td id=""></td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>3</td>
+          <td id=""></td>
+          <td id="result96"></td>
+          <td >MS-GI</td>
+          <td id="result97"></td>
+          <td >Nos</td>
+          <td id="result98"></td>
+          <td id=""></td>
+          <td id=""></td>
+        </tr>
+      </tbody>    
+      <tbody>
+        <tr>
+          <td>4</td>
+          <td id=""></td>
+          <td id="result99"></td>
+          <td >MS-GI</td>
+          <td id="result100"></td>
+          <td >Nos</td>
+          <td id="result101"></td>
+          <td id=""></td>
+          <td id=""></td>
+        </tr>
+      </tbody>   
+      <tbody>
+        <tr>
+          <td>5</td>
+          <td id=""></td>
+          <td> Fixator + Bolt For Fixator +Spring washer + Breackable nut +PVC threded dome nut cap </td>
+          <td >-</td>
+          <td id="result102"></td>
+          <td >Nos</td>
+          <td id=""></td>
+          <td id=""></td>
+          <td id=""></td>
+        </tr>
+      </tbody>  
+      <tbody>
+        <tr>
+          <td>6</td>
+          <td id=""></td>
+          <td> Double Strecher Clamp For Mesh Tighting</td>
+          <td >MS-GI</td>
+          <td id="result103"></td>
+          <td >Nos</td>
+          <td id=""></td>
+          <td id=""></td>
+          <td id=""></td>
+        </tr>
+      </tbody>  
+      <tbody>
+        <tr>
+          <td>7</td>
+          <td id=""></td>
+          <td> Hog Ring (3.5mm DIA)</td>
+          <td >SS-304</td>
+          <td id="result104"></td>
+          <td >Nos</td>
+          <td id=""></td>
+          <td id=""></td>
+          <td id=""></td>
+        </tr>
+      </tbody>       
+    </table>
+  </div>
+
+  <br>
+
+  <script>
+
+    document.getElementById("postprofile").innerText = localStorage.getItem("finalResult10") || "-";
+    document.getElementById("postprofile1").innerText = localStorage.getItem("finalResult10") || "-";
+    document.getElementById("postHeight").innerText  = localStorage.getItem("result15Value") +" mm" || "-";
+    document.getElementById("postHeight1").innerText  = localStorage.getItem("result15Value") +" mm" || "-";
+    document.getElementById("Crank").innerText       = localStorage.getItem("result16Value") +" mm" || "-";
+    document.getElementById("Crank1").innerText       = localStorage.getItem("result16Value") +" mm" || "-";
+    document.getElementById("Burried").innerText     = localStorage.getItem("result20Value") +" mm" || "-";
+    document.getElementById("Burried1").innerText     = localStorage.getItem("result20Value") +" mm" || "-";
+    
+
+    document.getElementById("TotalHeight").innerText = localStorage.getItem("result42Value") +" mm" || "-";
+    document.getElementById("TotalHeight1").innerText = localStorage.getItem("result42Value") +" mm" || "-";
+    
+
+    document.getElementById("TotalWeight").innerText = localStorage.getItem("finalValue11") +" Kg." || "-";
+    document.getElementById("TotalWeight1").innerText = localStorage.getItem("finalValue11") +" Kg." || "-";
+    document.getElementById("giprice").innerText = localStorage.getItem("result43Value") +" AED" || "-";
+    document.getElementById("giprice1").innerText = localStorage.getItem("result43bValue") +" AED" || "-";
+    document.getElementById("finishprice").innerText = localStorage.getItem("result44Value") +" AED" || "-";
+    document.getElementById("finishprice1").innerText = localStorage.getItem("result44bValue") +" AED" || "-";
+    document.getElementById("metalprice").innerText = localStorage.getItem("result45Value") +" AED" || "-";
+    document.getElementById("metalprice1").innerText = localStorage.getItem("result45bValue") +" AED" || "-";
+    document.getElementById("fab_charge").innerText = localStorage.getItem("result126Value") +" AED" || "-";
+    document.getElementById("fab_charge1").innerText = localStorage.getItem("result126bValue") +" AED" || "-";
+    document.getElementById("totalpostprice").innerText = localStorage.getItem("result46Value") +" AED" || "-";
+    document.getElementById("totalpostprice1").innerText = localStorage.getItem("result46bValue") +" AED" || "-";
+    document.getElementById("mainpanellength").innerText = localStorage.getItem("result3Value") +" mm" || "-";
+    document.getElementById("mainpanellength1").innerText = localStorage.getItem("result3Value") +" mm" || "-";
+    document.getElementById("mainpanelheight").innerText = localStorage.getItem("result6Value") +" mm" || "-";
+    document.getElementById("mainpanelheight1").innerText = localStorage.getItem("result6Value") +" mm" || "-";
+    document.getElementById("wire1").innerText = localStorage.getItem("result47Value") +" mm" || "-";
+    document.getElementById("1wire1").innerText = localStorage.getItem("result47Value") +" mm" || "-";
+    document.getElementById("hori1").innerText = localStorage.getItem("result30Value") +" mm" || "-";
+    document.getElementById("1hori1").innerText = localStorage.getItem("result30Value") +" mm" || "-";
+    document.getElementById("verti1").innerText = localStorage.getItem("result32Value") +" mm" || "-";
+    document.getElementById("1verti1").innerText = localStorage.getItem("result32Value") +" mm" || "-";
+    document.getElementById("TotalmainpanelWeight").innerText = localStorage.getItem("result48Value") +" Kg." || "-";
+    document.getElementById("TotalmainpanelWeight1").innerText = localStorage.getItem("result48Value") +" Kg." || "-";
+    document.getElementById("Total_mainpanel_Weight_with_scrap").innerText = localStorage.getItem("result49Value") +" Kg." || "-";
+    document.getElementById("Total_mainpanel_Weight_with_scrap1").innerText = localStorage.getItem("result49Value") +" Kg." || "-";
+    document.getElementById("Total/Main_Weldmesh_Price").innerText = localStorage.getItem("result50Value") +" AED" || "-";
+    document.getElementById("Total/Main_Weldmesh_Price1").innerText = localStorage.getItem("result50bValue") +" AED" || "-";
+
+    document.getElementById("outpanellength").innerText = localStorage.getItem("result4Value") +" mm" || "-";
+    document.getElementById("outpanelheight").innerText = localStorage.getItem("result17Value") +" mm" || "-";
+    document.getElementById("wire2").innerText = localStorage.getItem("result51Value") +" mm" || "-";
+    document.getElementById("hori2").innerText = localStorage.getItem("result34Value") +" mm" || "-";
+    document.getElementById("verti2").innerText = localStorage.getItem("result36Value") +" mm" || "-";
+    document.getElementById("TotaloutpanelWeight").innerText = localStorage.getItem("result52Value") +" Kg." || "-";
+    document.getElementById("Total_outpanel_Weight_with_scrap").innerText = localStorage.getItem("result53Value") +" Kg." || "-";
+    document.getElementById("Total/out_Weldmesh_Price").innerText = localStorage.getItem("result54Value") +" AED" || "-";
+
+    document.getElementById("1outpanellength").innerText = localStorage.getItem("result4Value") +" mm" || "-";
+    document.getElementById("1outpanelheight").innerText = localStorage.getItem("result17Value") +" mm" || "-";
+    document.getElementById("1wire2").innerText = localStorage.getItem("result51Value") +" mm" || "-";
+    document.getElementById("1hori2").innerText = localStorage.getItem("result34Value") +" mm" || "-";
+    document.getElementById("1verti2").innerText = localStorage.getItem("result36Value") +" mm" || "-";
+    document.getElementById("1TotaloutpanelWeight").innerText = localStorage.getItem("result52Value") +" Kg." || "-";
+    document.getElementById("1Total_outpanel_Weight_with_scrap").innerText = localStorage.getItem("result53Value") +" Kg." || "-";
+    document.getElementById("1Total/out_Weldmesh_Price").innerText = localStorage.getItem("result54bValue") +" AED" || "-";
+       
+    document.getElementById("grtpanellength").innerText = localStorage.getItem("result5Value") +" mm" || "-";
+    document.getElementById("grtpanelheight").innerText = localStorage.getItem("result7Value") +" mm" || "-";
+    document.getElementById("wire3").innerText = localStorage.getItem("result55Value") +" mm" || "-";
+    document.getElementById("hori3").innerText = localStorage.getItem("result37Value") +" mm" || "-";
+    document.getElementById("verti3").innerText = localStorage.getItem("result39Value") +" mm" || "-";
+    document.getElementById("TotalgrtpanelWeight").innerText = localStorage.getItem("result56Value") +" Kg." || "-";
+    document.getElementById("Total_grtpanel_Weight_with_scrap").innerText = localStorage.getItem("result57Value") +" Kg." || "-";
+    document.getElementById("Total/grt_Weldmesh_Price").innerText = localStorage.getItem("result58Value") +" AED" || "-";
+
+    document.getElementById("1grtpanellength").innerText = localStorage.getItem("result5Value") +" mm" || "-";
+    document.getElementById("1grtpanelheight").innerText = localStorage.getItem("result7Value") +" mm" || "-";
+    document.getElementById("1wire3").innerText = localStorage.getItem("result55Value") +" mm" || "-";
+    document.getElementById("1hori3").innerText = localStorage.getItem("result37Value") +" mm" || "-";
+    document.getElementById("1verti3").innerText = localStorage.getItem("result39Value") +" mm" || "-";
+    document.getElementById("1TotalgrtpanelWeight").innerText = localStorage.getItem("result56Value") +" Kg." || "-";
+    document.getElementById("1Total_grtpanel_Weight_with_scrap").innerText = localStorage.getItem("result57Value") +" Kg." || "-";
+    document.getElementById("1Total/grt_Weldmesh_Price").innerText = localStorage.getItem("result58bValue") +" AED" || "-";
+       
+    document.getElementById("fixatorqty").innerText = localStorage.getItem("result59Value") +" Nos" || "-";
+    document.getElementById("fixatorprice").innerText = localStorage.getItem("result60Value") +" AED" || "-";
+    document.getElementById("StrecherClampqty").innerText = localStorage.getItem("result61Value") +" Nos" || "-";
+    document.getElementById("StrecherClampprice").innerText = localStorage.getItem("result62Value") +" AED" || "-";
+    document.getElementById("clipqty").innerText = localStorage.getItem("result63Value") +" Nos" || "-";
+    document.getElementById("clipprice").innerText = localStorage.getItem("result64Value") +" AED" || "-";
+    document.getElementById("clipqty2").innerText = localStorage.getItem("result65Value") +" Nos" || "-";
+    document.getElementById("clipprice2").innerText = localStorage.getItem("result66Value") +" AED" || "-";
+
+    document.getElementById("1fixatorqty").innerText = localStorage.getItem("result59Value") +" Nos" || "-";
+    document.getElementById("1fixatorprice").innerText = localStorage.getItem("result60bValue") +" AED" || "-";
+    document.getElementById("1StrecherClampqty").innerText = localStorage.getItem("result61Value") +" Nos" || "-";
+    document.getElementById("1StrecherClampprice").innerText = localStorage.getItem("result62bValue") +" AED" || "-";
+    document.getElementById("1clipqty").innerText = localStorage.getItem("result63Value") +" Nos" || "-";
+    document.getElementById("1clipprice").innerText = localStorage.getItem("result64bValue") +" AED" || "-";
+    document.getElementById("1clipqty2").innerText = localStorage.getItem("result65Value") +" Nos" || "-";
+    document.getElementById("1clipprice2").innerText = localStorage.getItem("result66bValue") +" AED" || "-";
+
+
+
+    document.getElementById("result68").innerText = localStorage.getItem("result68Value") +" Mtr" || "-";
+    document.getElementById("result69").innerText = localStorage.getItem("result69Value") +" Nos" || "-";
+    document.getElementById("result70").innerText = localStorage.getItem("result70Value") +" Nos" || "-";
+    document.getElementById("result71").innerText = localStorage.getItem("result70Value") +" Nos" || "-";
+    document.getElementById("result72").innerText = localStorage.getItem("result70Value") +" Nos" || "-";
+    document.getElementById("result73").innerText = localStorage.getItem("result69Value") +" Nos" || "-";
+
+    document.getElementById("1result68").innerText = localStorage.getItem("result68Value") +" Mtr" || "-";
+    document.getElementById("1result69").innerText = localStorage.getItem("result69Value") +" Nos" || "-";
+    document.getElementById("1result70").innerText = localStorage.getItem("result70Value") +" Nos" || "-";
+    document.getElementById("1result71").innerText = localStorage.getItem("result70Value") +" Nos" || "-";
+    document.getElementById("1result72").innerText = localStorage.getItem("result70Value") +" Nos" || "-";
+    document.getElementById("1result73").innerText = localStorage.getItem("result69Value") +" Nos" || "-";
+
+
+
+    document.getElementById("result74").innerText = localStorage.getItem("result74Value") +" mm" || "-";
+    document.getElementById("result75").innerText = localStorage.getItem("result75Value") +" mm" || "-";
+    document.getElementById("result76").innerText = localStorage.getItem("result76Value") +" mm" || "-";    
+    document.getElementById("result77").innerText = localStorage.getItem("result77Value") +" M³" || "-";   
+    document.getElementById("result78").innerText = localStorage.getItem("result78Value") +" Kg." || "-";  
+    document.getElementById("result79").innerText = localStorage.getItem("result79Value") +" AED" || "-"; 
+
+
+
+    document.getElementById("1result74").innerText = localStorage.getItem("result74Value") +" mm" || "-";
+    document.getElementById("1result75").innerText = localStorage.getItem("result75Value") +" mm" || "-";
+    document.getElementById("1result76").innerText = localStorage.getItem("result76Value") +" mm" || "-";    
+    document.getElementById("1result77").innerText = localStorage.getItem("result77Value") +" M³" || "-";   
+    document.getElementById("1result78").innerText = localStorage.getItem("result78Value") +" Kg." || "-";  
+    document.getElementById("1result79").innerText = localStorage.getItem("result79bValue") +" AED" || "-"; 
+
+
+    document.getElementById("result80").innerText = localStorage.getItem("result80Value") +" AED" || "-";    
+    document.getElementById("result81").innerText = localStorage.getItem("result81Value") +" AED" || "-"; 
+    document.getElementById("result82").innerText = localStorage.getItem("result82Value") +" AED" || "-"; 
+    document.getElementById("result83").innerText = localStorage.getItem("result83Value") +" AED" || "-"; 
+    document.getElementById("result84").innerText = localStorage.getItem("result84Value") +" AED" || "-"; 
+    document.getElementById("result85").innerText = localStorage.getItem("result85Value") +" AED" || "-";  
+    document.getElementById("result86").innerText = localStorage.getItem("result86Value") +" AED" || "-"; 
+    
+    document.getElementById("1result80").innerText = localStorage.getItem("result80bValue") +" AED" || "-";    
+    document.getElementById("1result81").innerText = localStorage.getItem("result81bValue") +" AED" || "-"; 
+    document.getElementById("1result82").innerText = localStorage.getItem("result82bValue") +" AED" || "-"; 
+    document.getElementById("1result83").innerText = localStorage.getItem("result83bValue") +" AED" || "-"; 
+    document.getElementById("1result84").innerText = localStorage.getItem("result84bValue") +" AED" || "-"; 
+    document.getElementById("1result85").innerText = localStorage.getItem("result85bValue") +" AED" || "-";  
+    document.getElementById("1result86").innerText = localStorage.getItem("result86bValue") +" AED" || "-"; 
+    document.getElementById("result127").innerText = localStorage.getItem("result127Value") +" AED" || "-"; 
+    document.getElementById("result128").innerText = localStorage.getItem("result128Value") +" AED" || "-";     
+
+    document.getElementById("displayCustomer").textContent = localStorage.getItem("result87Value") || "No data";
+    document.getElementById("displayCustomer1").textContent = localStorage.getItem("result87Value") || "No data";
+
+    document.getElementById("displayProject").textContent = localStorage.getItem("result88Value") || "No data";
+    document.getElementById("displayProject1").textContent = localStorage.getItem("result88Value") || "No data";
+
+    document.getElementById("displayScope").textContent = localStorage.getItem("result89Value") || "No data";
+    document.getElementById("displayScope1").textContent = localStorage.getItem("result89Value") || "No data";
+
+    document.getElementById("displayEstimator").textContent = localStorage.getItem("result90Value") || "No data";
+    document.getElementById("displayEstimator1").textContent = localStorage.getItem("result90Value") || "No data";
+   
+    document.getElementById("finish").textContent = localStorage.getItem("result91Value") || "No data";
+    document.getElementById("finish1").textContent = localStorage.getItem("result91Value") || "No data";
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const formattedDate = localStorage.getItem("formattedDate") || "-";        
+      document.getElementById("dateCell").textContent = formattedDate;
+      document.getElementById("dateCell1").textContent = formattedDate;
+      document.getElementById("dateCell2").textContent = formattedDate;
+      document.getElementById("dateCell3").textContent = formattedDate;
+
+
+//boq
+    document.getElementById("postprofile1").innerText = localStorage.getItem("finalResult10") + ", (Post)" || "-";
+    document.getElementById("result92").innerText = localStorage.getItem("result92Value") +" Kg." || "-";
+    document.getElementById("result93").innerText = localStorage.getItem("finalResult1") + finalResult2 + " (Main Panel)"|| "-";
+    document.getElementById("result94").innerText = localStorage.getItem("result70Value")  || "-";
+    document.getElementById("result95").innerText = localStorage.getItem("result95Value") + " Kg." || "-";
+    document.getElementById("result96").innerText = localStorage.getItem("finalResult3") + finalResult4 + " (Outrigger Panel)" || "-";
+    document.getElementById("result97").innerText = localStorage.getItem("result70Value")  || "-";
+    document.getElementById("result98").innerText = localStorage.getItem("result98Value") + " Kg."  || "-";    
+    document.getElementById("result99").innerText = localStorage.getItem("finalResult5") + finalResult6 + " (Grouting Panel)" || "-";
+    document.getElementById("result100").innerText = localStorage.getItem("result70Value")  || "-";
+    document.getElementById("result101").innerText = localStorage.getItem("result101Value") + " Kg." || "-";
+    document.getElementById("result102").innerText = localStorage.getItem("result102Value") || "-";
+    document.getElementById("result103").innerText = localStorage.getItem("result103Value") || "-";
+    document.getElementById("result104").innerText = localStorage.getItem("result104Value") || "-"; 
+    document.getElementById("result106").innerText = localStorage.getItem("result106Value") || "-"; 
+//pr
+    document.getElementById("result107").innerText = localStorage.getItem("result107Value") || "No data"; 
+    document.getElementById("result108").innerText = localStorage.getItem("result108Value") || "No data"; 
+    document.getElementById("result109").innerText = localStorage.getItem("result109Value") || "No data";
+    document.getElementById("result110").innerText = localStorage.getItem("result87Value") || "No data";   
+    document.getElementById("result111").innerText = localStorage.getItem("result111Value") || "No data";  
+    document.getElementById("result112").innerText = localStorage.getItem("result112Value") || "No data";  
+    document.getElementById("result113").innerText = localStorage.getItem("result113Value") || "No data"; 
+    document.getElementById("result114").innerText = localStorage.getItem("result114Value") || "No data"; 
+    document.getElementById("result115").innerText = localStorage.getItem("result115Value") || "No data";
+    document.getElementById("result116").innerText = localStorage.getItem("result116Value") || "No data";        
+    document.getElementById("result117").innerText = localStorage.getItem("result89Value") || "No data";
+    document.getElementById("result118").innerText = localStorage.getItem("result118Value") || "No data";  
+    document.getElementById("result119").innerText = localStorage.getItem("result119Value") || "No data";
+    document.getElementById("result120").textContent = localStorage.getItem("result88Value") || "No data";
+    document.getElementById("result122").textContent = localStorage.getItem("result90Value") || "No data"; 
+    document.getElementById("postprofile2").innerText = localStorage.getItem("finalResult10") + "- Post" || "-";
+    document.getElementById("main_wm").innerText = localStorage.getItem("finalResult1") + finalResult2 || "-";
+    document.getElementById("out_wm").innerText = localStorage.getItem("finalResult3") + finalResult4 || "-";
+    document.getElementById("grt_wm").innerText = localStorage.getItem("finalResult5") + finalResult6 || "-";         
+    document.getElementById("main_wm_qty1").textContent = localStorage.getItem("result70Value") || "No data"; 
+    document.getElementById("main_wm_qty2").textContent = localStorage.getItem("result70Value") || "No data"; 
+    document.getElementById("main_wm_qty3").textContent = localStorage.getItem("result70Value") || "No data";            
+    document.getElementById("postqty").innerText = localStorage.getItem("result69Value")  || "-";
+    document.getElementById("color1").innerText = localStorage.getItem("result123Value")  || "-";
+    document.getElementById("color2").innerText = localStorage.getItem("result123Value")  || "-";    
+    document.getElementById("color3").innerText = localStorage.getItem("result123Value")  || "-";    
+    document.getElementById("color4").innerText = localStorage.getItem("result123Value")  || "-";
+    document.getElementById("color5").innerText = localStorage.getItem("result123Value")  || "-"; 
+
+          
+    document.getElementById("finish1").innerText = localStorage.getItem("result91Value")  || "-";
+    document.getElementById("finish2").innerText = localStorage.getItem("result91Value")  || "-";     
+    document.getElementById("finish3").innerText = localStorage.getItem("result91Value")  || "-";     
+    document.getElementById("finish4").innerText = localStorage.getItem("result91Value")  || "-";
+    document.getElementById("finish5").innerText = localStorage.getItem("result91Value") || "-";  
+    document.getElementById("finish6").innerText = localStorage.getItem("result124Value") || "-"; 
+          
+    document.getElementById("fix_qty").innerText = localStorage.getItem("result102Value")  || "-";
+    document.getElementById("strech_qty").innerText = localStorage.getItem("result103Value")  || "-";
+    document.getElementById("ring_qty").innerText = localStorage.getItem("result104Value")  || "-";
+    document.getElementById("date1").innerText = localStorage.getItem("result125Value") || "No data";
+    document.getElementById("date2").innerText = localStorage.getItem("result125Value") || "No data";
+    document.getElementById("date3").innerText = localStorage.getItem("result125Value") || "No data";
+    document.getElementById("date4").innerText = localStorage.getItem("result125Value") || "No data";
+    document.getElementById("date5").innerText = localStorage.getItem("result125Value") || "No data";
+    document.getElementById("date6").innerText = localStorage.getItem("result125Value") || "No data";
+    document.getElementById("date7").innerText = localStorage.getItem("result125Value") || "No data";
+
+    });
+
+
+function exportExcel() {
+
+  let wb = XLSX.utils.book_new();
+  let ws = XLSX.utils.aoa_to_sheet([]);
+
+
+  let tableIds = ["finalResultsTable1", "finalResultsTable2", "finalResultsTable3", "finalResultsTable4", "finalResultsTable5",
+  "finalResultsTable6", "finalResultsTable7", "finalResultsTable8", "finalResultsTable9", "finalResultsTable10", "finalResultsTable11"
+  , "finalResultsTable12", "finalResultsTable13", "finalResultsTable14", "finalResultsTable15", "finalResultsTable16", "finalResultsTable17", "finalResultsTable18"];
+
+  let currentRow = 0;
+
+  tableIds.forEach(id => {
+    let table = document.getElementById(id);
+    if (table) {
+
+      let tempWs = XLSX.utils.table_to_sheet(table);
+
+
+      let data = XLSX.utils.sheet_to_json(tempWs, { header: 1 });
+
+
+      XLSX.utils.sheet_add_aoa(ws, data, { origin: { r: currentRow, c: 0 } });
+
+
+      currentRow += data.length + 2;
+    }
+  });
+
+
+  XLSX.utils.book_append_sheet(wb, ws, "All_Data");
+
+
+  XLSX.writeFile(wb, "POST_BURRIED_SINGLE_CRANK_GROUNTING_PANEL.xlsx");
+}
+</script>
+</body>
+
+<body>
+  <script>
+    function goBack() {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
+
+  <title>Production Request</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      margin: 20px;
+    }
+    .header {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .company {
+      text-align: left;
+      font-weight: bold;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+    th, td {
+      padding: 6px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .no-border td {
+      border: none;
+    }
+    .section-title {
+      background: #f0f0f0;
+      font-weight: bold;
+      text-align: center;
+      padding: 6px;
+    }
+    .remark {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .footer {
+      margin-top: 20px;
+      font-size: 11px;
+      text-align: right;
+    }
+    #LMELOGO { position:absolute;
+    display: block;
+    max-width: 120px;
+    margin: 0 auto 10px;
+    right: 3vh;
+    top: 314vh;
+}
+  </style>
+</head>
+<body>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <div class="company">
+    LINK MIDDLE EAST GENERAL CONTRACTING COMPANY <br>
+    PO BOX : 51070 <br>
+    ABU DHABI <br>
+    UNITED ARAB EMIRATES
+  </div>
+<img id="LMELOGO" src="DRAWING/LMELOGO.png" alt="LMELOGO">
+  <h2 class="header">PRODUCTION REQUEST</h2>
+    <table id="finalResultsTable18" border="1" cellspacing="0" cellpadding="5">
+
+    <tr>
+      <td><b>Cust. Code:</b> <span id="result107"></span></td>
+      <td><b>PR NO:</b> <span id="result108"></span></td>
+    </tr>
+    <tr>
+      <td><b>To:</b> <span id="result110"></span></td>
+      <td><b>Date:</b> <span id="dateCell1"></span></td>
+    </tr>
+    <tr>
+      <td><b>Address:</b> <span id="result109"></span></td>
+      <td><b>Fab Engineer:</b> <span id="result111"></td>
+    </tr>
+    <tr>
+      <td><b>TRN:</b> <span id="result112"></span></td>
+      <td><b>Delivery:</b> <span id="result113"></span></td>
+    </tr>
+    <tr>
+      <td><b>Cust. LPO:</b> <span id="result114"></span></td>
+      <td><b>Ship To:</b> <span id="result115"></span></td>
+    </tr>
+    <tr>
+      <td><b>LPO Date:</b> <span id="result116"></span></td>
+      <td><b>Scope:</b> <span id="result117"></span></td>
+    </tr>
+    <tr>
+      <td><b>Sales Engineer:</b> <span id="result118"></span></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <td><b>Job:</b> <span id="result119"></span></td>
+    </tr>
+    <tr>
+      <td><b>Project</b> <span id="result120"></span></td>
+    </tr>
+  </table>  </table>
+    <table id="finalResultsTable11" border="1" cellspacing="0" cellpadding="5">
+  <table>
+    <tr>
+      <th>SN</th>
+      <th>Stock Code</th>
+      <th>Stock Description</th>
+      <th>Unit</th>
+      <th>Qty</th>
+      <th>Color</th>
+      <th>Type Of Coating</th>
+      <th>EDD</th>
+      <th>Remarks</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>NO DATA</td>
+      <td> <span id="postprofile2"></span><br> FABRICATION - GKW</td>
+      <td>Nos</td>
+      <td><span id="postqty"></span></td>
+      <td><span id="color1"></span></td>
+      <td><span id="finish1"></span></td>
+      <td><span id="date1"></span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>NO DATA</td>
+      <td><span id="main_wm"></span><br> WELDMESH - GMC</td>
+      <td>Nos</td>
+      <td><span id="main_wm_qty1"></span></td>
+      <td><span id="color2"></span></td>
+      <td><span id="finish2"></span></td>
+      <td><span id="date2"></span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>NO DATA</td>
+      <td><span id="out_wm"></span><br> WELDMESH - GMC</td>
+      <td>Nos</td>
+      <td><span id="main_wm_qty2"></span><br></td>
+      <td><span id="color3"></span></td>
+      <td><span id="finish3"></span></td>
+      <td><span id="date3"></span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>NO DATA</td>
+      <td><span id="grt_wm"></span><br> WELDMESH - GMC</td>
+      <td>Nos</td>
+      <td><span id="main_wm_qty3"></span></td>
+      <td><span id="color4"></span></td>
+      <td><span id="finish4"></span></td>
+      <td><span id="date4"></span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>NO DATA</td>
+      <td>Fixator + Bolt For Fixator +Spring washer + Breackable nut +PVC threded dome nut cap<br> STORE - GKW</td>
+      <td>SET</td>
+      <td><span id="fix_qty"></span></td>
+      <td>Black Color</td>
+      <td>None</span></td>
+      <td><span id="date5"></span></td>
+      <td></td>
+    </tr> 
+    <tr>
+      <td>6</td>
+      <td>NO DATA</td>
+      <td> Double Strecher Clamp For Mesh Tighting<br> STORE - GKW</td>
+      <td>SET</td>
+      <td><span id="strech_qty"></span></td>
+      <td><span id="color5"></span></td>
+      <td><span id="finish5"></span></td>
+      <td><span id="date6"></span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>NO DATA</td>
+      <td> Hog Ring (3.5mm DIA)<br> STORE - GKW</td>
+      <td>Nos</td>
+      <td><span id="ring_qty"></span></td>
+      <td>SS-304</span></td>
+      <td>None</span></td>
+      <td><span id="date7"></span></td>
+      <td></td>
+    </tr>           
+  </table></table>
+
+  <div class="remark">
+    Remark: <span id="finish6"></span>
+  </div>
+
+  <div class="footer">
+    Printed by user: <span id="result122"></div>
+      <div class="footer">
+    Run date: <span id="dateCell2"></div>    
+    Page 1 of 1<br>
+    Powered by LME Web Application<br>
+  </div>
+  <br><br><br><br>
+    <button onclick="exportExcel()" style="font-weight: bold;background-color: red;color: white;">Download All Excel</button>  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
+

@@ -1,0 +1,85 @@
+
+    #container {
+      position: relative;
+      display: inline-block;
+    }
+
+    #drawing {
+      width: 99%;
+    }
+ 
+  label {
+      position: absolute;
+      font-weight: bold;
+      color: blue;
+      margin-top: 0%;
+       margin-right: 0%;
+      font-size:100%;
+    } 
+    p {position:absolute;
+    font-size: 90%;
+    top: 92%;
+    left: 55%;
+    font-weight: bold;
+    text-decoration: underline;
+    color: red;
+    }
+    
+#result1 { top: 56.5%; left: 19.5%; }  /* IP*/
+#result2 { top: 56.5%; left: 37.5%; } /* IP*/
+#result3 { top: 71%; left: 13.5%; } /* main panel LENGHT*/
+#result4 { top: 75%; left: 39%; }  /* OUTRIGER panel LENGHT*/
+#result5 { top: 82%; left: 43%; } /* grounting panel lenght*/
+#result6 { top: 83%; left: 4.5% ; transform:rotate(-90deg); } /* main panel height*/
+#result7 { top: 89%; left: 36%; transform:rotate(-90deg); } /* grounting panel height*/
+#result8 { top: 83%; left: 27%; transform:rotate(-90deg); } /* main panel height*/
+#result9 { top: 69%; left: 13.5% ;}/* main panel LENGHT*/
+#result10 { top: 76.3%; left: 39% ;}  /* grounting panel OUT TO OUT*/
+#result11 { top: 6%; left: 19.5% ;} /* IP*/
+#result12 { top: 6%; left: 37.5%; } /* IP*/
+#result13 { top: 58.2%; left: 19.5% ;}
+#result14 { top: 58.2%; left: 37.5%; }
+#result15 { top: 29.5%; left: 54%; transform:rotate(-90deg);} /* POST HEIGHT*/
+#result16 { top: 20%; left: 59.2%; transform:rotate(-60deg);} /* CRANK LENGHT*/
+#result17 { top: 20%; left: 60.4%; transform:rotate(-60deg);}  /* OUTRIGER PANEL HEIGHT*/
+#result18 { top: 72%; left: 54.2%; transform:rotate(-60deg);} /* OUTRIGER panel LENGHT*/
+#result19 { top: 71%; left: 32.5%; transform:rotate(-90deg);} 
+#result20 { top: 39.5%; left: 59%; transform:rotate(-90deg);}/* BURRIED HEIGHT*/
+#result21 { top: 44%; left: 58%;} /* FOOTING WIDTH*/
+#result22 { top: 53%; left: 6.2%;transform:rotate(-90deg);} 
+#result23 { top: 44.5%; left: 11%;} /*LEFT FOOTONG LENGHT*/
+#result24 { top: 44.5%; left: 45%;} /*RIGHT FOOTONG LENGHT*/
+#result25 { top: 56.5%; left: 11%;}
+#result26 { top: 56.5%; left: 45%;} /*RIGHT FOOTONG LENGHT*/
+#result27 { top: 56.5%; left: 28%;} /*CENTER FOOTONG LENGHT*/
+#result28 { top: 40.5%; left: 60.5%; transform:rotate(-90deg);} /*fotting ht*/
+#result29 { top: 40.5%; left: 7%; transform:rotate(-90deg);} /*fotting ht*/
+#result30 { top: 72%; left: 8%;} /*main panel horimesh*/
+#result31 { top: 72%; left: 22%;} /*main panel horimesh*/
+#result32 { top: 76.5%; left: 5.5%;transform:rotate(-90deg);} /*main panel vertical mesh*/
+#result33 { top: 86.7%; left: 5.5%;transform:rotate(-90deg);} /*main panel vertical mesh*/
+#result34 { top: 65.5%; left: 34.5%;} /*outriger panel horimesh*/
+#result35 { top: 65.5%; left: 49%;} /*outriger panel horimesh*/
+#result36 { top: 65.8%; left: 46%;transform:rotate(-90deg);} /*outriger panel vertical*/
+#result37 { top: 83.6%; left: 37.5%;} /*gronting panel horimesh*/
+#result38 { top: 83.6%; left: 50.5%;} /*gronting panel horimesh*/
+#result39 { top: 86.5%; left: 36%;transform:rotate(-90deg);} /*gronting panelvertical*/
+#result40 { top: 92%; left: 28%;} /*CRIMP1*/
+#result41 { top: 93%; left: 28%;} /*CRIMP2*/
+
+
+
+
+#finalResult1 { top: 40.5%; left: 81% ;font-size: 75%;color: black;}
+#finalResult2 { top: 41.5%; left: 81% ;font-size: 75%;color: black;}
+#finalResult3 { top: 43.4%; left: 81% ; font-size: 75%;color: black; }
+#finalResult4 { top: 44.4%; left: 81% ;font-size: 75%; color: black;}
+#finalResult5 { top: 46.4%; left: 81% ;font-size: 75%;color: black;}
+#finalResult6 { top: 47.4%; left: 81% ;font-size: 75%; color: black;}
+#finalResult7 { top: 49.4%; left: 81% ;font-size: 62%; color: black;}
+#finalResult8 { top: 56.8%; left: 81% ;font-size: 58%; color: black;}
+#finalResult9 { top: 51%; left: 71.5% ;font-size: 60%; color: black;}
+#finalResult10 { top: 31.7%; left: 59.5% ;font-size: 60%; color: black;}
+#finalResult11 { top: 27%; left: 59.5% ;font-size: 60%; color: black;}
+
+

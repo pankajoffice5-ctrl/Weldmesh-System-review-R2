@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f9;
+      color: #333;
+    }
+    .container {
+      text-align: left;
+      margin-top: 0.1%;
+      padding: 0 40px;
+    }
+    #LMELOGO {
+      width: 8%;
+      margin-top: 0.0%;
+    }
+    h1 {position: relative;
+      margin-top: 2vh;
+      margin-bottom: 2vh;
+      font-size: 5em;
+      color: black;
+      border-radius: 8px;
+      top: -14vh;
+      left: 20vh;
+      width:173vh;
+    }
+        h2 {position: relative;
+      margin-top: 5vh;
+      margin-bottom: -10vh;
+      font-size: 5em;
+      color: white;
+      background-color: rgba(16,103,58,220);
+      border-radius: 8px;
+      top: -14vh;
+      left: 0vh;
+    }
+    
+.button-group {
+  display: flex;
+  flex-direction: column; /* stack buttons vertically */
+  align-items: flex-start; /* align to left side */
+  width: fit-content;
+}
+
+.button-group button {
+  background-color: gray;   /* default for all buttons */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px 0;  /* space between buttons */
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 20px;
+  width: 100%; /* optional: make all same width */
+  text-align: left; /* keep text aligned left */
+}
+
+/* First button blue */
+.button-group button:first-child {
+  background-color: #3498db;
+}
+
+/* Hover effect */
+.button-group button:hover {
+  opacity: 0.8;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+<img id="LMELOGO" src="DRAWING/LMELOGO.png" alt="LMELOGO">
+      <h1>LINK MIDDLE EAST</h1>  
+    <h2>Estimation & Drawing System</h2>
+    <div class="button-group">
+      <button onclick="openPage('weldmesh.html')">● Weldmesh System</button>
+      <button onclick="">● Chain Link System</button>
+      <button onclick="">● Fencing Gate System</button>
+      <button onclick="">● Gabion Box System</button>
+      <button onclick="">● Guardrail System</button>
+      <button onclick="">● Razor Tape Weld Mesh System</button>
+      <button onclick="">● CBT System</button>
+      <button onclick="">● Instomat Link Barriers System</button>
+      <button onclick="">● Gazelle Net System</button>      
+      <button onclick="">● Signage System</button>
+    </div>
+  </div>
+  <script>
+    function openPage(page) {
+      window.location.href = page;
+    }
+  </script>
+</body>
+</html>
