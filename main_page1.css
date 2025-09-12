@@ -82,12 +82,12 @@ header .subtitle {
 
 
 .summary h3 {
-    font-size: 20px;
+    font-size: 17px;
     margin-bottom: 15px;
     text-decoration:underline;
     color: #2c3e50;
     text-align: center;
-    margin-left: 12vh;
+    margin-left: 15vh;
 }
 .summary-item {
     display: flex;
