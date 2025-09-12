@@ -40,12 +40,12 @@
             </div>
             <div class="info-group">
                 <label for="estimator">Estimation By</label>
-             <input type="text" id="estimator" placeholder="Enter estimator">
+             <input type="text" id="estimator" placeholder="Enter estimator name">
             </div>
         </div>
                     
             <div class="summary">
-                <h3>Standerd Price-Budget List</h3>
+                <h4>Quotation Price-Actual Price</h4>
             <div class="summary-item">
                 <span class="Finish">Finish</span>
             <select id="finish"name="finish">
@@ -81,7 +81,7 @@
             <td><input type="number" id="fixatorrate" value="11.0"><input type="number" id="bfixatorrate" value="9.0"><span class="unit">AED/Nos</span></td>
                 </div>
                 <div class="summary-item">
-                    <span class="strecher_clamp_rate">Strecher Clamp</span>
+                    <span class="strecher_clamp_rate">Stretcher Clamp</span>
             <td><input type="number" id="strecher_clamp_rate" value="8.0"><input type="number" id="bstrecher_clamp_rate" value="5.0"><span class="unit">AED/Nos</span></td>
                 </div>
                 <div class="summary-item">
@@ -95,6 +95,10 @@
                 <div class="summary-item">
                     <span class="fab_charge">Fabrication Charges</span>
             <td><input type="number" id="fab_charge" value="35.0"><input type="number" id="bfab_charge" value="25.0"><span class="unit">In %</span></td>
+                </div>
+                <div class="summary-item">
+                    <span class="wm_scrap">Weldmesh Scrap</span>
+            <td><input type="number" id="wm_scrap" value="10.0"><input type="number" id="bwm_scrap" value="8.0"><span class="unit">In %</span></td>
                 </div>
 
 
@@ -184,7 +188,7 @@
             <option value="10">10</option>                        
         </select><br><br>
 
-        <label for="strecher_clampqty">Double Strecher Clamp/Post (Nos):</label>
+        <label for="strecher_clampqty">Double Stretcher Clamp/Post (Nos):</label>
         <select id="strecher_clampqty" name="strecher_clampqty">
             <option value="3">3</option>
             <option value="2">2</option>            
@@ -514,12 +518,10 @@
     const widthft = parseFloat(document.getElementById("widthft").value) || 0; 
     const heightft = parseFloat(document.getElementById("heightft").value) || 0; 
     const postheight = parseFloat(document.getElementById("postheight").value) || 0; 
-    const wiredia1 = parseFloat(document.getElementById("wiredia1").value) || 0; 
+
     const wiredia2 = parseFloat(document.getElementById("wiredia2").value) || 0; 
     const wiredia3 = parseFloat(document.getElementById("wiredia3").value) || 0; 
     const grounting_panel_height = parseFloat(document.getElementById("grounting_panel_height").value) || 0; 
-    const crossspacing1 = parseFloat(document.getElementById("crossspacing1").value) || 0; 
-    const linespacing1 = parseFloat(document.getElementById("linespacing1").value) || 0; 
     const crossspacing2 = parseFloat(document.getElementById("crossspacing2").value) || 0; 
     const linespacing2 = parseFloat(document.getElementById("linespacing2").value) || 0; 
     const cranksize = parseFloat(document.getElementById("cranksize").value) || 0; 
@@ -538,8 +540,10 @@
     const strecher_clamp_rate = parseFloat(document.getElementById("strecher_clamp_rate").value) || 0; 
     const SS_CLIPS_rate = parseFloat(document.getElementById("SS_CLIPS_rate").value) || 0; 
     const totallm = parseFloat(document.getElementById("totallm").value) || 0; 
+    const wiredia1 = parseFloat(document.getElementById("wiredia1").value) || 0; 
+    const linespacing1 = parseFloat(document.getElementById("linespacing1").value) || 0; 
+    const crossspacing1 = parseFloat(document.getElementById("crossspacing1").value) || 0; 
     
-
 
 
     const bpcrate = document.getElementById("bpcrate").value;
@@ -552,6 +556,8 @@
     const bstrecher_clamp_rate = document.getElementById("bstrecher_clamp_rate").value;
     const bSS_CLIPS_rate = document.getElementById("bSS_CLIPS_rate").value;
     const bfootingrate = document.getElementById("bfootingrate").value;
+    const wm_scrap = document.getElementById("wm_scrap").value;
+    const bwm_scrap = document.getElementById("bwm_scrap").value;
 
 
 
@@ -594,7 +600,7 @@
     let result3 = ((ip) - 16).toFixed(0);    
     let result4 = ((ip) - 16).toFixed(0); 
     let result5 = ((ip) - (200 + lengthFt)).toFixed(0); 
-    let result6 = ((postheight) + (wiredia1)).toFixed(0); 
+    let result6 = (Number(postheight) + Number(wiredia1)).toFixed(0); 
     let result7 = ((grounting_panel_height)).toFixed(0); 
     let result9 = ((ip + wiredia1 ) - 16 ).toFixed(0);    
     let result10 = ((ip + wiredia2 ) - 16 ).toFixed(0);    
@@ -646,8 +652,12 @@
     let part2 = ((wiredia1 * 0.1 * wiredia1 * 0.1 * Math.PI / 4 * 0.785 * result6 / 1000) * (result3 / linespacing1 + 1));
 
     let result48 = (part1 + part2).toFixed(2);
-    let result49 = (result48 * 1.08).toFixed(2);
+    let result49 = ( Number(result48) +  (result48 * wm_scrap / 100 )).toFixed(2);//pending
+    let result49b = ( Number(result48) +  (result48 * bwm_scrap / 100 )).toFixed(2);//pending
+
+
     let result50 = (result49 * wmrate ).toFixed(2)
+
     let result50b = (result49 * bwmrate ).toFixed(2)    
 
     let result51 = (wiredia2).toFixed(2); 
@@ -656,7 +666,10 @@
     let part4 = ((wiredia2 * 0.1 * wiredia2 * 0.1 * Math.PI / 4 * 0.785 * result17 / 1000) * (result4 / linespacing2 + 1));
 
     let result52 = (part3 + part4).toFixed(2);
-    let result53 = (result52 * 1.08).toFixed(2);
+    let result53 = (Number(result52) + (result52 * wm_scrap / 100 ) ).toFixed(2);
+    let result53b = (Number(result52) + (result52 * bwm_scrap / 100 ) ).toFixed(2);
+
+
     let result54 = (result53 * wmrate ).toFixed(2)
     let result54b = (result53 * bwmrate ).toFixed(2)
 
@@ -667,7 +680,9 @@
     let part6 = ((wiredia3 * 0.1 * wiredia3 * 0.1 * Math.PI / 4 * 0.785 * result7 / 1000) * (result5 / linespacing3 + 1));
 
     let result56 = (part5 + part6).toFixed(2);
-    let result57 = (result56 * 1.08).toFixed(2);
+    let result57 = (Number(result56) + (result56 * wm_scrap / 100 )).toFixed(2);
+    let result57b = (Number(result56) + (result56 * bwm_scrap / 100 )).toFixed(2);
+
     let result58 = (result57 * wmrate ).toFixed(2);
     let result58b = (result57 * bwmrate ).toFixed(2);
 
@@ -762,7 +777,8 @@
 
     let estimationlm = ( result86 / totalLm ) .toFixed(2) ;
     let budgetlm = ( result86b / totalLm ) .toFixed(2) ;
-
+    let result131 =  Number( lengthFt ) + " x " + Number( widthft ) + " x " + Number( heightft ) + " mm, Concrate footing" ; 
+    let result132 = ( result69 * result78 ) .toFixed(2) ;
 
 
 
@@ -772,14 +788,18 @@
     let finalResult4 ="PANEL SIZE " + result4 + "mm. WIDE X " + cranksize  + "mm. HEIGHT," ; 
     let finalResult5 = wiredia3 + "mm DIA. WIRE, MESH SIZE " + crossspacing3 + "X" + linespacing3 + "mm," ; 
     let finalResult6 ="PANEL SIZE " + result5 + "mm. WIDE X " + result7  + "mm. HEIGHT," ; 
-    let finalResult7 = postprofile + " THK. MS RHS FENCE POST @ EVERY " + ip  + "mm. C/C" ; 
+    let finalResult7 = postprofile + " THK. MS RHS FENCE POST @ EVERY " + ip  + "mm. C/C" ;
+   
+    
 
-    // ✅ substring now works because postprofile is a string
+
     let first2 = postprofile.substring(0, 3);   
     let modifiedProfile = parseInt(first2) + 30;
-    let finalResult8 = "SS-316, M8X" + modifiedProfile + "mm.LG BOLT WITH BREAKABLE NUT BLACK COLOR"; 
+    let finalResult8 = "SS-316, M8X" + modifiedProfile + "mm.LG BOLT WITH BREAKABLE NUT BLACK COLOR";
     let finalResult9 = "SS M8X" + modifiedProfile + "mm.LONG BOLT (J)"; 
     let finalResult10 = postprofile ; 
+
+
 
     // Store in localStorage
     localStorage.setItem("result1Value", result1);
@@ -818,16 +838,19 @@
     localStorage.setItem("result47Value", result47);
     localStorage.setItem("result48Value", result48);
     localStorage.setItem("result49Value", result49);
+    localStorage.setItem("result49bValue", result49b);
     localStorage.setItem("result50Value", result50);
     localStorage.setItem("result50bValue", result50b);
     localStorage.setItem("result51Value", result51);
     localStorage.setItem("result52Value", result52);
     localStorage.setItem("result53Value", result53);
+    localStorage.setItem("result53bValue", result53b);
     localStorage.setItem("result54Value", result54);
     localStorage.setItem("result54bValue", result54b);
     localStorage.setItem("result55Value", result55);
     localStorage.setItem("result56Value", result56);
     localStorage.setItem("result57Value", result57);
+    localStorage.setItem("result57bValue", result57b);
     localStorage.setItem("result58Value", result58);
     localStorage.setItem("result58bValue", result58b);
     localStorage.setItem("result59Value", result59);
@@ -895,9 +918,12 @@
     localStorage.setItem("result125Value", date4);
     localStorage.setItem("result126Value", result126); 
     localStorage.setItem("result126bValue", result126b);
-    localStorage.setItem("result127Value", estimationlm);
+    localStorage.setItem("result127Value", estimationlm); 
     localStorage.setItem("result128Value", budgetlm);
-    
+    localStorage.setItem("result129Value", wm_scrap);
+    localStorage.setItem("result130Value", bwm_scrap);
+    localStorage.setItem("result131Value", result131); 
+    localStorage.setItem("result132Value", result132); 
     
 
     localStorage.setItem("finalResult1", finalResult1);
@@ -912,10 +938,45 @@
     localStorage.setItem("finalResult10", finalResult10);
     localStorage.setItem("finalValue11", finalValue11);
 
+
     window.location.href = "burried_single_crank_page-2.html";
 
   }
 </script>
+
+
+  <script>
+    function updateWireDia() {
+      if (linespacing1.value === "12.5" || crossspacing1.value === "12.5") {
+        wiredia1.value = "4";   // force to 4 mm
+        wiredia1.disabled = true; // lock selection
+      } else {
+        wiredia1.disabled = false; // unlock selection
+      }
+    }
+
+    linespacing1.addEventListener("change", updateWireDia);
+    crossspacing1.addEventListener("change", updateWireDia);
+  </script>
+
+
+<script>
+    function updateWireDia() {
+      if (linespacing2.value === "12.5" || crossspacing2.value === "12.5") {
+        wiredia2.value = "4";   // force to 4 mm
+        wiredia2.disabled = true; // lock selection
+      } else {
+        wiredia2.disabled = false; // unlock selection
+      }
+    }
+
+    linespacing2.addEventListener("change", updateWireDia);
+    crossspacing2.addEventListener("change", updateWireDia);
+</script>
+
+
+
+  </script>
 
 </body>
 </html>
