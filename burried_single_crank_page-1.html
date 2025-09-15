@@ -183,6 +183,13 @@
             <option value="600">600</option>
             <option value="700">700</option>
         </select><br><br>
+         <label for="crankdegree">Crank Degrees (°):</label>
+        <select id="crankdegree" name="crankdegree">
+            <option value="30°">30°</option>
+            <option value="45°">45°</option>
+            <option value="60°">60°</option>
+        </select>       
+        <br><br>
 </fieldset>          <fieldset>
         <label for="fixatorqty">Fixator/Post (Nos):</label>
         <select id="fixatorqty" name="fixatorqty">
@@ -551,7 +558,9 @@
     const totallm = parseFloat(document.getElementById("totallm").value) || 0; 
     const wiredia1 = parseFloat(document.getElementById("wiredia1").value) || 0; 
     const linespacing1 = parseFloat(document.getElementById("linespacing1").value) || 0; 
-    const crossspacing1 = parseFloat(document.getElementById("crossspacing1").value) || 0; 
+    const crossspacing1 = parseFloat(document.getElementById("crossspacing1").value) || 0;
+    const crankdegree = parseFloat(document.getElementById("crankdegree").value) + "°" || 0;
+
     
 
 
@@ -654,11 +663,13 @@
     let result46 = ( (girate * finalValue11) + (pcrate * finalValue12) + (msrate * finalValue11) + ( result126 * 1 ) ).toFixed(2)
     let result46b = ( (bgirate * finalValue11) + (bpcrate * finalValue12) + (bmsrate * finalValue11) + ( result126b * 1 ) ) .toFixed(2)   
     
-    let result47 = (wiredia1).toFixed(2); 
+    let result47 = (wiredia1).toFixed(2);
 
+    let crimp1lent = ( crimps1 * 15 )
+    let crimp2lent = ( crimps2 * 15 )
 
     let part1 = ((wiredia1 * 0.1 * wiredia1 * 0.1 * Math.PI / 4 * 0.785 * result3 / 1000) * (result6 / crossspacing1 + 1));
-    let part2 = ((wiredia1 * 0.1 * wiredia1 * 0.1 * Math.PI / 4 * 0.785 * result6 / 1000) * (result3 / linespacing1 + 1));
+    let part2 = ((wiredia1 * 0.1 * wiredia1 * 0.1 * Math.PI / 4 * 0.785 * (Number( result6 ) + Number( crimp1lent )) / 1000) * (result3 / linespacing1 + 1)); 
 
     let result48 = (part1 + part2).toFixed(2);
     let result49 = ( Number(result48) +  (result48 * wm_scrap / 100 )).toFixed(2);//pending
@@ -672,7 +683,7 @@
     let result51 = (wiredia2).toFixed(2); 
 
     let part3 = ((wiredia2 * 0.1 * wiredia2 * 0.1 * Math.PI / 4 * 0.785 * result4 / 1000) * (result17 / crossspacing2 + 1));
-    let part4 = ((wiredia2 * 0.1 * wiredia2 * 0.1 * Math.PI / 4 * 0.785 * result17 / 1000) * (result4 / linespacing2 + 1));
+    let part4 = ((wiredia2 * 0.1 * wiredia2 * 0.1 * Math.PI / 4 * 0.785 * (Number( result17 ) + Number( crimp2lent )) / 1000) * (result4 / linespacing2 + 1)); 
 
     let result52 = (part3 + part4).toFixed(2);
     let result53 = (Number(result52) + (result52 * wm_scrap / 100 ) ).toFixed(2);
@@ -932,7 +943,8 @@
     localStorage.setItem("result129Value", wm_scrap);
     localStorage.setItem("result130Value", bwm_scrap);
     localStorage.setItem("result131Value", result131); 
-    localStorage.setItem("result132Value", result132); 
+    localStorage.setItem("result132Value", result132);
+    localStorage.setItem("result133Value", crankdegree); 
     
 
     localStorage.setItem("finalResult1", finalResult1);
