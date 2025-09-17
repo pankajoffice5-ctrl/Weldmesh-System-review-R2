@@ -642,7 +642,7 @@
     let totalHeight = postheight + cranksize + burried ;
 
     let weightPerUnit = profileWeights[postprofile] || 0;
-    let finalValue11 = weightPerUnit * (totalHeight/1000);
+    let finalValue11 = (weightPerUnit * (totalHeight/1000)).toFixed(2);
 
     let finishPerUnit = profilefinish[postprofile] || 0;
     let finalValue12 = finishPerUnit * (totalHeight/1000);
