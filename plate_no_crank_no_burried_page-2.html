@@ -1,16 +1,16 @@
 <!DOCTYPE html> 
 <html>
 <head>
-  <title>POST BURRIED+SINGLE CRANK+GROUNTING PANEL</title>
-  <link rel="stylesheet" href="burried_single_crank_page-2.css">
+  <title>POST BASE PLATE+NO CRANK+ NO GROUNTING PANEL</title>
+  <link rel="stylesheet" href="plate_no_crank_no_burried_page-2.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
 <body>
 
 
 <div id="container">
-  <img id="drawing" src="DRAWING/DRAWING-1.jpg" alt="drawing">
-<p>POST BURRIED+SINGLE CRANK+GROUNTING PANEL</p>
+  <img id="drawing" src="DRAWING/DRAWING-9.jpg" alt="drawing">
+<p>POST BASE PLATE+NO CRANK+ NO GROUNTING PANEL</p>
 
   <label id="result1"></label>
   <label id="result2"></label>
@@ -31,7 +31,9 @@
   <label id="result17"></label> <!--outrigger panel height-->
   <label id="result18"></label> <!--outrigger panel height-->
   <label id="result19"></label> <!--outrigger panel height-->
-  <label id="result20"></label> <!--burrid post-->
+  <label id="result201"></label> <!--base plate lenght-->
+  <label id="result202"></label><!--base plate width-->
+  <label id="result203"></label><!--base plate thk-->
   <label id="result21"></label> <!--footing widthFt-->
   <label id="result22"></label> <!--footing widthFt-->
   <label id="result23"></label> <!--footing lenghtFt-->
@@ -68,7 +70,7 @@
   <label id="finalResult9"></label>
   <label id="finalResult10"></label>
   <label id="finalResult11"></label>
-
+  <label id="finalResult12"></label>
 </div>
 
 
@@ -86,7 +88,9 @@ let value11 = localStorage.getItem("result11Value"); // ip c/c
 let value15 = localStorage.getItem("result15Value"); // post height
 let value16 = localStorage.getItem("result16Value"); // crank height
 let value17 = localStorage.getItem("result17Value"); // outrigger panel height
-let value20 = localStorage.getItem("result20Value"); // burrid post
+let value201 = localStorage.getItem("result201Value"); // base plate lenght
+let value202 = localStorage.getItem("result202Value"); // base plate width
+let value203 = localStorage.getItem("result203Value"); // base plate thk
 let value21 = localStorage.getItem("result21Value"); // footing width
 let value23 = localStorage.getItem("result23Value"); // footing lenght
 let value28 = localStorage.getItem("result28Value"); // footing height
@@ -121,7 +125,9 @@ document.getElementById("result16").innerText = value16;// crank height
 document.getElementById("result17").innerText = value17;// outrigger panel height
 document.getElementById("result18").innerText = value17;// outrigger panel height
 document.getElementById("result19").innerText = value17;// outrigger panel height
-document.getElementById("result20").innerText = value20;// burrid post
+document.getElementById("result201").innerText = value201;// base plate lenght
+document.getElementById("result202").innerText = value202;// base plate width
+document.getElementById("result203").innerText = value203;// base plate thk
 document.getElementById("result21").innerText = value21;// footing width
 document.getElementById("result22").innerText = value21;// footing width
 document.getElementById("result23").innerText = value23;// footing lenght
@@ -155,6 +161,7 @@ let finalResult7 = localStorage.getItem("finalResult7");
 let finalResult8 = localStorage.getItem("finalResult8"); 
 let finalResult9 = localStorage.getItem("finalResult9"); 
 let finalResult10 = localStorage.getItem("finalResult10"); 
+let finalResult12 = localStorage.getItem("finalResult12"); 
 
 document.getElementById("finalResult1").innerText = finalResult1;
 document.getElementById("finalResult2").innerText = finalResult2;
@@ -167,7 +174,7 @@ document.getElementById("finalResult8").innerText = finalResult8;
 document.getElementById("finalResult9").innerText = finalResult9;
 document.getElementById("finalResult10").innerText = finalResult10;
 document.getElementById("finalResult11").innerText = finalResult9;
-
+document.getElementById("finalResult12").innerText = finalResult12;
 </script>
 
 
@@ -217,7 +224,7 @@ document.getElementById("finalResult11").innerText = finalResult9;
       </thead>
       <tbody>
         <tr>
-        <td  id="dateCell"></td>
+          <td id="dateCell"></td>  
          <td id="displayCustomer"></td>
           <td id="displayProject"></td>
           <td id="displayScope"></td>
@@ -227,7 +234,6 @@ document.getElementById("finalResult11").innerText = finalResult9;
     </table>
   </div>
 
-
   <div class="tab-content active">
     <h2>Post Specifications</h2>       
     <table id="finalResultsTable2" border="1" cellspacing="0" cellpadding="5">
@@ -235,8 +241,8 @@ document.getElementById("finalResult11").innerText = finalResult9;
         <tr>
           <th>Post Profile</th>
           <th>Main Height from FFL</th>
-          <th>Crank Length inclined</th>
-          <th>Burried from FFL</th>
+
+
           <th>Total Height</th>
           <th>Total Weight</th>
           <th>Galvanizing Price</th>
@@ -250,8 +256,8 @@ document.getElementById("finalResult11").innerText = finalResult9;
         <tr>
           <td id="postprofile"></td>
           <td id="postHeight"></td>
-          <td id="Crank"></td>
-          <td id="Burried"></td>
+
+
           <td id="TotalHeight"></td>
           <td id="TotalWeight"></td>
           <td id="giprice"></td>
@@ -264,7 +270,36 @@ document.getElementById("finalResult11").innerText = finalResult9;
     </table>
   </div>
 
+
+
     <div class="tab-content active">
+    <h2>Base Plate Specifications</h2>       
+    <table id="finalResultsTable3" border="1" cellspacing="0" cellpadding="5">
+      <thead>
+        <tr>
+          <th>Length x width x thk</th>
+          <th>Actual Weight</th>
+          <th>Metal Price</th>
+          <th>Galvanizing Price</th>
+          <th id="finish33"></th>
+          <th>Base Plate Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="bpsize1"></td>
+          <td id="bp_wt1"></td>
+          <td id="baseplate_ms"></td>
+          <td id="baseplate_gi"></td>
+          <td id="baseplate_pc"></td>
+          <td id="baseplate_price"></td>
+       </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="tab-content active">
     <h2>Main Weldmesh Panel Specifications</h2>       
     <table id="finalResultsTable3" border="1" cellspacing="0" cellpadding="5">
       <thead>
@@ -295,70 +330,11 @@ document.getElementById("finalResult11").innerText = finalResult9;
     </table>
   </div>
   
-    <div class="tab-content active">
-    <h2>Outrigger Weldmesh Panel Specifications</h2>       
-    <table id="finalResultsTable4" border="1" cellspacing="0" cellpadding="5">
-      <thead>
-        <tr>
-          <th>Length</th>
-          <th>Height</th>
-          <th>Wire Dia</th>
-          <th>Hori.Mesh</th>
-          <th>Verti.Mesh</th>
-          <th>Actual Weight</th>
-          <th id="2result129"></th>
-          <th>Total/Outrigger Weldmesh Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td id="outpanellength"></td>
-          <td id="outpanelheight"></td>
-          <td id="wire2"></td>
-          <td id="hori2"></td>
-          <td id="verti2"></td>
-          <td id="TotaloutpanelWeight"></td>
-          <td id="Total_outpanel_Weight_with_scrap"></td>
-          <td id="Total/out_Weldmesh_Price"></td>
-
-        </tr>
-      </tbody>
-    </table>
-  </div>
+   
 
 
 
 
-    <div class="tab-content active">
-    <h2>Grouting Weldmesh Panel Specifications</h2>       
-    <table id="finalResultsTable5" border="1" cellspacing="0" cellpadding="5">
-      <thead>
-        <tr>
-          <th>Length</th>
-          <th>Height</th>
-          <th>Wire Dia</th>
-          <th>Hori.Mesh</th>
-          <th>Verti.Mesh</th>
-          <th>Actual Weight</th>
-          <th id="3result129"></th>
-          <th>Total/Grouting Weldmesh Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td id="grtpanellength"></td>
-          <td id="grtpanelheight"></td>
-          <td id="wire3"></td>
-          <td id="hori3"></td>
-          <td id="verti3"></td>
-          <td id="TotalgrtpanelWeight"></td>
-          <td id="Total_grtpanel_Weight_with_scrap"></td>
-          <td id="Total/grt_Weldmesh_Price"></td>
-
-        </tr>
-      </tbody>
-    </table>
-  </div>
 
     <div class="tab-content active">
     <h2>Footing Specifications</h2>       
@@ -422,9 +398,9 @@ document.getElementById("finalResult11").innerText = finalResult9;
     <thead>
       <tr>
         <th>Total Post QTY</th>
+        <th>Base Plate QTY</th>
         <th>Total Main WM Panel</th>
-        <th>Total Main Ourigg. Panel</th>
-        <th>Total Main Grout. Panel</th>
+
         <th>Total Main Footting</th>
         <th>Accessories</th>  
         <th>Rate/LM.</th>  
@@ -434,9 +410,10 @@ document.getElementById("finalResult11").innerText = finalResult9;
     <tbody>
       <tr>
         <td id="result69"></td>
+        <td id="baseplateqty"></td>
         <td id="result70"></td>
-        <td id="result71"></td>
-        <td id="result72"></td>
+
+
         <td id="result73"></td>
         <td id="result74"></td> 
         <td >FENCE</td> 
@@ -446,9 +423,9 @@ document.getElementById("finalResult11").innerText = finalResult9;
       <tbody>
       <tr>
         <td id="result80"></td>
+        <td id="base_plate_price"></td>
         <td id="result81"></td>
-        <td id="result82"></td>
-        <td id="result83"></td>
+
         <td id="result84"></td>
         <td id="result85"></td>
         <td id="result127"></td>          
@@ -457,7 +434,8 @@ document.getElementById("finalResult11").innerText = finalResult9;
     </tbody>
   </table>
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <div class="tab-content active">
     <h1>Internal Raw Material Sheet</h1>       
     <h2>User Details</h2>       
@@ -491,12 +469,12 @@ document.getElementById("finalResult11").innerText = finalResult9;
         <tr>
           <th>Post Profile</th>
           <th>Main Height from FFL</th>
-          <th>Crank Length_incline</th>
-          <th>Burried from FFL</th>
+
+
           <th>Total Height</th>
           <th>Total Weight</th>
           <th>Galvanizing Price</th>
-          <th id="finish1"></th>
+          <th id="finish11"></th>
           <th>Metal Price</th>
           <th>Fabrication Charge</th>
           <th>Total/Post Price</th>
@@ -506,8 +484,8 @@ document.getElementById("finalResult11").innerText = finalResult9;
         <tr>
           <td id="1postprofile1"></td>
           <td id="postHeight1"></td>
-          <td id="Crank1"></td>
-          <td id="Burried1"></td>
+
+
           <td id="TotalHeight1"></td>
           <td id="TotalWeight1"></td>
           <td id="giprice1"></td>
@@ -516,6 +494,32 @@ document.getElementById("finalResult11").innerText = finalResult9;
           <td id="fab_charge1"></td>          
           <td id="totalpostprice1"></td>
         </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <div class="tab-content active">
+    <h2>Base Plate Specifications</h2>       
+    <table id="finalResultsTable3" border="1" cellspacing="0" cellpadding="5">
+      <thead>
+        <tr>
+          <th>Length x width x thk</th>
+          <th>Actual Weight</th>
+          <th>Metal Price</th>
+          <th>Galvanizing Price</th>
+          <th id="finish44"></th>
+          <th>Base Plate Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="bpsize2"></td>
+          <td id="bp_wt2"></td>
+          <td id="baseplate_ms1"></td>
+          <td id="baseplate_gi1"></td>
+          <td id="baseplate_pc1"></td>
+          <td id="baseplate_price1"></td>
+       </tr>
       </tbody>
     </table>
   </div>
@@ -551,70 +555,6 @@ document.getElementById("finalResult11").innerText = finalResult9;
     </table>
   </div>
   
-    <div class="tab-content active">
-    <h2>Outrigger Weldmesh Panel Specifications</h2>       
-    <table id="finalResultsTable12" border="1" cellspacing="0" cellpadding="5">
-      <thead>
-        <tr>
-          <th>Length</th>
-          <th>Height</th>
-          <th>Wire Dia</th>
-          <th>Hori.Mesh</th>
-          <th>Verti.Mesh</th>
-          <th>Actual Weight</th>
-          <th id="2result130"></th>
-          <th>Total/Outrigger Weldmesh Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td id="1outpanellength"></td>
-          <td id="1outpanelheight"></td>
-          <td id="1wire2"></td>
-          <td id="1hori2"></td>
-          <td id="1verti2"></td>
-          <td id="1TotaloutpanelWeight"></td>
-          <td id="1Total_outpanel_Weight_with_scrap"></td>
-          <td id="1Total/out_Weldmesh_Price"></td>
-
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-
-
-
-    <div class="tab-content active">
-    <h2>Grouting Weldmesh Panel Specifications</h2>       
-    <table id="finalResultsTable13" border="1" cellspacing="0" cellpadding="5">
-      <thead>
-        <tr>
-          <th>Length</th>
-          <th>Height</th>
-          <th>Wire Dia</th>
-          <th>Hori.Mesh</th>
-          <th>Verti.Mesh</th>
-          <th>Actual Weight</th>
-          <th id="3result130"></th>
-          <th>Total/Grouting Weldmesh Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td id="1grtpanellength"></td>
-          <td id="1grtpanelheight"></td>
-          <td id="1wire3"></td>
-          <td id="1hori3"></td>
-          <td id="1verti3"></td>
-          <td id="1TotalgrtpanelWeight"></td>
-          <td id="1Total_grtpanel_Weight_with_scrap"></td>
-          <td id="1Total/grt_Weldmesh_Price"></td>
-
-        </tr>
-      </tbody>
-    </table>
-  </div>
 
     <div class="tab-content active">
     <h2>Footing Specifications</h2>       
@@ -678,9 +618,9 @@ document.getElementById("finalResult11").innerText = finalResult9;
     <thead>
       <tr>
         <th>Total Post QTY</th>
+        <th>Base Plate QTY</th>
         <th>Total Main WM Panel</th>
-        <th>Total Main Ourigg. Panel</th>
-        <th>Total Main Grout. Panel</th>
+
         <th>Total Main Footting</th>
         <th>Accessories</th>  
         <th>Rate/LM.</th>  
@@ -690,9 +630,10 @@ document.getElementById("finalResult11").innerText = finalResult9;
     <tbody>
       <tr>
         <td id="1result69"></td>
+        <td id="baseplateqty1"></td>
         <td id="1result70"></td>
-        <td id="1result71"></td>
-        <td id="1result72"></td>
+
+
         <td id="1result73"></td>
         <td id="1result74"></td> 
         <td >FENCE</td> 
@@ -702,9 +643,10 @@ document.getElementById("finalResult11").innerText = finalResult9;
       <tbody>
       <tr>
         <td id="1result80"></td>
+        <td id="base_plate_price1"></td>
         <td id="1result81"></td>
-        <td id="1result82"></td>
-        <td id="1result83"></td>
+
+
         <td id="1result84"></td>
         <td id="1result85"></td>
         <td id="result128"></td>         
@@ -713,7 +655,7 @@ document.getElementById("finalResult11").innerText = finalResult9;
     </tbody>
   </table>
 </div>
-<br><br><br><br><br><br>
+<br>
     <div class="tab-content active">
     <h1>Bill of Quantity</h1>       
     <table id="finalResultsTable17" border="1" cellspacing="0" cellpadding="5">
@@ -756,35 +698,10 @@ document.getElementById("finalResult11").innerText = finalResult9;
           <td id=""></td>
         </tr>
       </tbody>
+     
       <tbody>
         <tr>
           <td>3</td>
-          <td id=""></td>
-          <td id="result96"></td>
-          <td >MS-GI</td>
-          <td id="result97"></td>
-          <td >Nos</td>
-          <td id="result98"></td>
-          <td id=""></td>
-          <td id=""></td>
-        </tr>
-      </tbody>    
-      <tbody>
-        <tr>
-          <td>4</td>
-          <td id=""></td>
-          <td id="result99"></td>
-          <td >MS-GI</td>
-          <td id="result100"></td>
-          <td >Nos</td>
-          <td id="result101"></td>
-          <td id=""></td>
-          <td id=""></td>
-        </tr>
-      </tbody>   
-      <tbody>
-        <tr>
-          <td>5</td>
           <td id=""></td>
           <td> Fixator + Bolt For Fixator +Spring washer + Breackable nut +PVC threded dome nut cap </td>
           <td >-</td>
@@ -797,7 +714,7 @@ document.getElementById("finalResult11").innerText = finalResult9;
       </tbody>  
       <tbody>
         <tr>
-          <td>6</td>
+          <td>4</td>
           <td id=""></td>
           <td> Double Stretcher Clamp For Mesh Tighting</td>
           <td >MS-GI</td>
@@ -810,7 +727,7 @@ document.getElementById("finalResult11").innerText = finalResult9;
       </tbody>  
       <tbody>
         <tr>
-          <td>7</td>
+          <td>5</td>
           <td id=""></td>
           <td> Hog Ring (3.5mm DIA)</td>
           <td >SS-304</td>
@@ -823,13 +740,26 @@ document.getElementById("finalResult11").innerText = finalResult9;
       </tbody> 
        <tbody>
         <tr>
-          <td>8</td>
+          <td>6</td>
           <td id=""></td>
           <td id="footing"></td>
           <td >-</td>
           <td id="ftqty1"></td>
           <td >Nos</td>
           <td id="footingwt"></td>
+          <td id=""></td>
+          <td id=""></td>
+        </tr>
+      </tbody> 
+             <tbody>
+        <tr>
+          <td>7</td>
+          <td id=""></td>
+          <td id="bpsize3"></td>
+          <td >MS-GI</td>
+          <td id="baseplateqty2"></td>
+          <td >Nos</td>
+          <td id="baseplatetotalwt"></td>
           <td id=""></td>
           <td id=""></td>
         </tr>
@@ -846,10 +776,14 @@ document.getElementById("finalResult11").innerText = finalResult9;
     document.getElementById("1postprofile1").innerText = localStorage.getItem("finalResult10") || "-";
     document.getElementById("postHeight").innerText  = localStorage.getItem("result15Value") +" mm" || "-";
     document.getElementById("postHeight1").innerText  = localStorage.getItem("result15Value") +" mm" || "-";
-    document.getElementById("Crank").innerText       = localStorage.getItem("result16Value") +" mm" || "-";
-    document.getElementById("Crank1").innerText       = localStorage.getItem("result16Value") +" mm" || "-";
-    document.getElementById("Burried").innerText     = localStorage.getItem("result20Value") +" mm" || "-";
-    document.getElementById("Burried1").innerText     = localStorage.getItem("result20Value") +" mm" || "-";
+
+    document.getElementById("bpsize1").innerText = localStorage.getItem("finalResult13") +" mm" || "-";
+    document.getElementById("bpsize2").innerText = localStorage.getItem("finalResult13") +" mm" || "-";
+    document.getElementById("bpsize3").innerText = localStorage.getItem("finalResult13") +" mm" || "-";
+
+
+
+
     
 
     document.getElementById("TotalHeight").innerText = localStorage.getItem("result42Value") +" mm" || "-";
@@ -885,42 +819,8 @@ document.getElementById("finalResult11").innerText = finalResult9;
     document.getElementById("Total/Main_Weldmesh_Price").innerText = localStorage.getItem("result50Value") +" AED" || "-";
     document.getElementById("Total/Main_Weldmesh_Price1").innerText = localStorage.getItem("result50bValue") +" AED" || "-";
 
-    document.getElementById("outpanellength").innerText = localStorage.getItem("result4Value") +" mm" || "-";
-    document.getElementById("outpanelheight").innerText = localStorage.getItem("result17Value") +" mm" || "-";
-    document.getElementById("wire2").innerText = localStorage.getItem("result51Value") +" mm" || "-";
-    document.getElementById("hori2").innerText = localStorage.getItem("result34Value") +" mm" || "-";
-    document.getElementById("verti2").innerText = localStorage.getItem("result36Value") +" mm" || "-";
-    document.getElementById("TotaloutpanelWeight").innerText = localStorage.getItem("result52Value") +" Kg." || "-";
-    document.getElementById("Total_outpanel_Weight_with_scrap").innerText = localStorage.getItem("result53Value") +" Kg." || "-";
-    document.getElementById("Total/out_Weldmesh_Price").innerText = localStorage.getItem("result54Value") +" AED" || "-";
 
-    document.getElementById("1outpanellength").innerText = localStorage.getItem("result4Value") +" mm" || "-";
-    document.getElementById("1outpanelheight").innerText = localStorage.getItem("result17Value") +" mm" || "-";
-    document.getElementById("1wire2").innerText = localStorage.getItem("result51Value") +" mm" || "-";
-    document.getElementById("1hori2").innerText = localStorage.getItem("result34Value") +" mm" || "-";
-    document.getElementById("1verti2").innerText = localStorage.getItem("result36Value") +" mm" || "-";
-    document.getElementById("1TotaloutpanelWeight").innerText = localStorage.getItem("result52Value") +" Kg." || "-";
-    document.getElementById("1Total_outpanel_Weight_with_scrap").innerText = localStorage.getItem("result53bValue") +" Kg." || "-";
-    document.getElementById("1Total/out_Weldmesh_Price").innerText = localStorage.getItem("result54bValue") +" AED" || "-";
-       
-    document.getElementById("grtpanellength").innerText = localStorage.getItem("result5Value") +" mm" || "-";
-    document.getElementById("grtpanelheight").innerText = localStorage.getItem("result7Value") +" mm" || "-";
-    document.getElementById("wire3").innerText = localStorage.getItem("result55Value") +" mm" || "-";
-    document.getElementById("hori3").innerText = localStorage.getItem("result37Value") +" mm" || "-";
-    document.getElementById("verti3").innerText = localStorage.getItem("result39Value") +" mm" || "-";
-    document.getElementById("TotalgrtpanelWeight").innerText = localStorage.getItem("result56Value") +" Kg." || "-";
-    document.getElementById("Total_grtpanel_Weight_with_scrap").innerText = localStorage.getItem("result57bValue") +" Kg." || "-";
-    document.getElementById("Total/grt_Weldmesh_Price").innerText = localStorage.getItem("result58Value") +" AED" || "-";
 
-    document.getElementById("1grtpanellength").innerText = localStorage.getItem("result5Value") +" mm" || "-";
-    document.getElementById("1grtpanelheight").innerText = localStorage.getItem("result7Value") +" mm" || "-";
-    document.getElementById("1wire3").innerText = localStorage.getItem("result55Value") +" mm" || "-";
-    document.getElementById("1hori3").innerText = localStorage.getItem("result37Value") +" mm" || "-";
-    document.getElementById("1verti3").innerText = localStorage.getItem("result39Value") +" mm" || "-";
-    document.getElementById("1TotalgrtpanelWeight").innerText = localStorage.getItem("result56Value") +" Kg." || "-";
-    document.getElementById("1Total_grtpanel_Weight_with_scrap").innerText = localStorage.getItem("result57Value") +" Kg." || "-";
-    document.getElementById("1Total/grt_Weldmesh_Price").innerText = localStorage.getItem("result58bValue") +" AED" || "-";
-       
     document.getElementById("fixatorqty").innerText = localStorage.getItem("result59Value") +" Nos" || "-";
     document.getElementById("fixatorprice").innerText = localStorage.getItem("result60Value") +" AED" || "-";
     document.getElementById("StrecherClampqty").innerText = localStorage.getItem("result61Value") +" Nos" || "-";
@@ -944,15 +844,17 @@ document.getElementById("finalResult11").innerText = finalResult9;
     document.getElementById("result68").innerText = localStorage.getItem("result68Value") +" Mtr" || "-";
     document.getElementById("result69").innerText = localStorage.getItem("result69Value") +" Nos" || "-";
     document.getElementById("result70").innerText = localStorage.getItem("result70Value") +" Nos" || "-";
-    document.getElementById("result71").innerText = localStorage.getItem("result70Value") +" Nos" || "-";
-    document.getElementById("result72").innerText = localStorage.getItem("result70Value") +" Nos" || "-";
+
+
     document.getElementById("result73").innerText = localStorage.getItem("result69Value") +" Nos" || "-";
+    document.getElementById("baseplateqty").innerText = localStorage.getItem("result69Value") +" Nos" || "-";
+    document.getElementById("baseplateqty1").innerText = localStorage.getItem("result69Value") +" Nos" || "-";
+    document.getElementById("baseplateqty2").innerText = localStorage.getItem("result69Value") +" Nos" || "-";
 
     document.getElementById("1result68").innerText = localStorage.getItem("result68Value") +" Mtr" || "-";
     document.getElementById("1result69").innerText = localStorage.getItem("result69Value") +" Nos" || "-";
     document.getElementById("1result70").innerText = localStorage.getItem("result70Value") +" Nos" || "-";
-    document.getElementById("1result71").innerText = localStorage.getItem("result70Value") +" Nos" || "-";
-    document.getElementById("1result72").innerText = localStorage.getItem("result70Value") +" Nos" || "-";
+
     document.getElementById("1result73").innerText = localStorage.getItem("result69Value") +" Nos" || "-";
 
 
@@ -976,16 +878,15 @@ document.getElementById("finalResult11").innerText = finalResult9;
 
     document.getElementById("result80").innerText = localStorage.getItem("result80Value") +" AED" || "-";    
     document.getElementById("result81").innerText = localStorage.getItem("result81Value") +" AED" || "-"; 
-    document.getElementById("result82").innerText = localStorage.getItem("result82Value") +" AED" || "-"; 
-    document.getElementById("result83").innerText = localStorage.getItem("result83Value") +" AED" || "-"; 
+
+
     document.getElementById("result84").innerText = localStorage.getItem("result84Value") +" AED" || "-"; 
     document.getElementById("result85").innerText = localStorage.getItem("result85Value") +" AED" || "-";  
     document.getElementById("result86").innerText = localStorage.getItem("result86Value") +" AED" || "-"; 
     
     document.getElementById("1result80").innerText = localStorage.getItem("result80bValue") +" AED" || "-";    
     document.getElementById("1result81").innerText = localStorage.getItem("result81bValue") +" AED" || "-"; 
-    document.getElementById("1result82").innerText = localStorage.getItem("result82bValue") +" AED" || "-"; 
-    document.getElementById("1result83").innerText = localStorage.getItem("result83bValue") +" AED" || "-"; 
+
     document.getElementById("1result84").innerText = localStorage.getItem("result84bValue") +" AED" || "-"; 
     document.getElementById("1result85").innerText = localStorage.getItem("result85bValue") +" AED" || "-";  
     document.getElementById("1result86").innerText = localStorage.getItem("result86bValue") +" AED" || "-"; 
@@ -1005,7 +906,9 @@ document.getElementById("finalResult11").innerText = finalResult9;
     document.getElementById("displayEstimator1").textContent = localStorage.getItem("result90Value") || "No data";
    
     document.getElementById("finish").textContent = localStorage.getItem("result91Value") || "No data";
-    document.getElementById("finish1").textContent = localStorage.getItem("result91Value") || "No data";
+    document.getElementById("finish11").textContent = localStorage.getItem("result91Value") || "No data";
+    document.getElementById("finish33").textContent = localStorage.getItem("result91Value") || "No data";
+    document.getElementById("finish44").textContent = localStorage.getItem("result91Value") || "No data";
 
     document.addEventListener('DOMContentLoaded', () => {
 
@@ -1022,17 +925,16 @@ document.getElementById("finalResult11").innerText = finalResult9;
     document.getElementById("result93").innerText = localStorage.getItem("finalResult1") + finalResult2 + " (Main Panel)"|| "-";
     document.getElementById("result94").innerText = localStorage.getItem("result70Value")  || "-";
     document.getElementById("result95").innerText = localStorage.getItem("result95Value") + " Kg." || "-";
-    document.getElementById("result96").innerText = localStorage.getItem("finalResult3") + finalResult4 + " (Outrigger Panel)" || "-";
-    document.getElementById("result97").innerText = localStorage.getItem("result70Value")  || "-";
-    document.getElementById("result98").innerText = localStorage.getItem("result98Value") + " Kg."  || "-";    
-    document.getElementById("result99").innerText = localStorage.getItem("finalResult5") + finalResult6 + " (Grouting Panel)" || "-";
-    document.getElementById("result100").innerText = localStorage.getItem("result70Value")  || "-";
-    document.getElementById("result101").innerText = localStorage.getItem("result101Value") + " Kg." || "-";
+
+
+
+
+
+
     document.getElementById("result102").innerText = localStorage.getItem("result102Value") || "-";
     document.getElementById("result103").innerText = localStorage.getItem("result103Value") || "-";
     document.getElementById("result104").innerText = localStorage.getItem("result104Value") || "-"; 
-    document.getElementById("result106").innerText = localStorage.getItem("result106Value") || "-";
-      
+    document.getElementById("result106").innerText = localStorage.getItem("result106Value") || "-"; 
 //pr
     document.getElementById("result107").innerText = localStorage.getItem("result107Value") || "No data"; 
     document.getElementById("result108").innerText = localStorage.getItem("result108Value") || "No data"; 
@@ -1051,48 +953,66 @@ document.getElementById("finalResult11").innerText = finalResult9;
     document.getElementById("result122").textContent = localStorage.getItem("result90Value") || "No data"; 
     document.getElementById("postprofile2").innerText = localStorage.getItem("finalResult10") + "- Post" || "-";
     document.getElementById("main_wm").innerText = localStorage.getItem("finalResult1") + finalResult2 || "-";
-    document.getElementById("out_wm").innerText = localStorage.getItem("finalResult3") + finalResult4 || "-";
-    document.getElementById("grt_wm").innerText = localStorage.getItem("finalResult5") + finalResult6 || "-";         
+       
     document.getElementById("main_wm_qty1").textContent = localStorage.getItem("result70Value") || "No data"; 
-    document.getElementById("main_wm_qty2").textContent = localStorage.getItem("result70Value") || "No data"; 
-    document.getElementById("main_wm_qty3").textContent = localStorage.getItem("result70Value") || "No data";            
+
+      
     document.getElementById("postqty").innerText = localStorage.getItem("result106Value")  || "-";
     document.getElementById("ftqty").innerText = localStorage.getItem("result69Value")  || "-";
     document.getElementById("ftqty1").innerText = localStorage.getItem("result69Value")  || "-";
     document.getElementById("color1").innerText = localStorage.getItem("result123Value")  || "-";
     document.getElementById("color2").innerText = localStorage.getItem("result123Value")  || "-";    
-    document.getElementById("color3").innerText = localStorage.getItem("result123Value")  || "-";    
-    document.getElementById("color4").innerText = localStorage.getItem("result123Value")  || "-";
+   
+
     document.getElementById("color5").innerText = localStorage.getItem("result123Value")  || "-"; 
+    document.getElementById("color6").innerText = localStorage.getItem("result123Value")  || "-"; 
 
           
     document.getElementById("finish1").innerText = localStorage.getItem("result91Value")  || "-";
     document.getElementById("finish2").innerText = localStorage.getItem("result91Value")  || "-";     
-    document.getElementById("finish3").innerText = localStorage.getItem("result91Value")  || "-";     
-    document.getElementById("finish4").innerText = localStorage.getItem("result91Value")  || "-";
+
     document.getElementById("finish5").innerText = localStorage.getItem("result91Value") || "-";  
     document.getElementById("finish6").innerText = localStorage.getItem("result124Value") || "-"; 
+    document.getElementById("finish7").innerText = localStorage.getItem("result91Value") || "-"; 
+
           
     document.getElementById("fix_qty").innerText = localStorage.getItem("result102Value")  || "-";
     document.getElementById("strech_qty").innerText = localStorage.getItem("result103Value")  || "-";
     document.getElementById("ring_qty").innerText = localStorage.getItem("result104Value")  || "-";
     document.getElementById("date1").innerText = localStorage.getItem("result125Value") || "No data";
     document.getElementById("date2").innerText = localStorage.getItem("result125Value") || "No data";
-    document.getElementById("date3").innerText = localStorage.getItem("result125Value") || "No data";
-    document.getElementById("date4").innerText = localStorage.getItem("result125Value") || "No data";
+
     document.getElementById("date5").innerText = localStorage.getItem("result125Value") || "No data";
     document.getElementById("date6").innerText = localStorage.getItem("result125Value") || "No data";
     document.getElementById("date7").innerText = localStorage.getItem("result125Value") || "No data";
     document.getElementById("date9").innerText = localStorage.getItem("result125Value") || "No data";
+    document.getElementById("date10").innerText = localStorage.getItem("result125Value") || "No data";
     document.getElementById("1result129").innerText = localStorage.getItem("result129Value") + " % with Scrap WT."  || "No data";
-    document.getElementById("2result129").innerText = localStorage.getItem("result129Value") + " % with Scrap WT."  || "No data";
-    document.getElementById("3result129").innerText = localStorage.getItem("result129Value") + " % with Scrap WT."  || "No data";
+
+
     document.getElementById("1result130").innerText = localStorage.getItem("result130Value") + " % with Scrap WT."  || "No data";
-    document.getElementById("2result130").innerText = localStorage.getItem("result130Value") + " % with Scrap WT."  || "No data";
-    document.getElementById("3result130").innerText = localStorage.getItem("result130Value") + " % with Scrap WT."  || "No data";
+
+
     document.getElementById("footingp").innerText = localStorage.getItem("result131Value") || "No data";
     document.getElementById("footing").innerText = localStorage.getItem("result131Value") || "No data";
     document.getElementById("footingwt").innerText = localStorage.getItem("result132Value") +" Kg."  || "No data";
+    document.getElementById("bp_wt1").innerText = localStorage.getItem("result134Value") +" Kg."  || "No data";
+    document.getElementById("baseplate_ms").innerText = localStorage.getItem("result135Value") +" AED"  || "No data";
+    document.getElementById("baseplate_gi").innerText = localStorage.getItem("result136Value") +" AED"  || "No data";
+    document.getElementById("baseplate_pc").innerText = localStorage.getItem("result137Value") +" AED"  || "No data";
+    document.getElementById("baseplate_price").innerText = localStorage.getItem("result138Value") +" AED"  || "No data";
+    document.getElementById("base_plate_price").innerText = localStorage.getItem("result139Value") +" AED"  || "No data";
+
+    document.getElementById("bp_wt2").innerText = localStorage.getItem("result134Value") +" Kg."  || "No data";
+    document.getElementById("baseplate_ms1").innerText = localStorage.getItem("result140Value") +" AED"  || "No data";
+    document.getElementById("baseplate_gi1").innerText = localStorage.getItem("result141Value") +" AED"  || "No data";
+    document.getElementById("baseplate_pc1").innerText = localStorage.getItem("result142Value") +" AED"  || "No data";
+    document.getElementById("baseplate_price1").innerText = localStorage.getItem("result143Value") +" AED"  || "No data";
+    document.getElementById("base_plate_price1").innerText = localStorage.getItem("result144Value") +" AED"  || "No data";
+    document.getElementById("baseplatetotalwt").innerText = localStorage.getItem("result145Value") +" Kg."  || "No data";
+    document.getElementById("bpsize4").innerText = localStorage.getItem("finalResult13") +" mm"  || "No data";
+    document.getElementById("baseplateqty3").innerText = localStorage.getItem("result69Value") +" Nos"  || "No data";
+
 
     });
 
@@ -1130,7 +1050,7 @@ function exportExcel() {
   XLSX.utils.book_append_sheet(wb, ws, "All_Data");
 
 
-  XLSX.writeFile(wb, "POST_BURRIED_SINGLE_CRANK_GROUNTING_PANEL.xlsx");
+  XLSX.writeFile(wb, "POST_BASE_PLATE_NO_CRANK_NO_GROUNTING_PANEL.xlsx");
 }
 </script>
 </body>
@@ -1201,7 +1121,7 @@ function exportExcel() {
   </style>
 </head>
 <body>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <div class="company">
     LINK MIDDLE EAST FZE <br>
     PO BOX : 16846 <br>
@@ -1286,30 +1206,9 @@ function exportExcel() {
       <td><span id="date2"></span></td>
       <td></td>
     </tr>
+    
     <tr>
       <td>3</td>
-      <td>NO DATA</td>
-      <td><span id="out_wm"></span><br> WELDMESH - GMC</td>
-      <td>Nos</td>
-      <td><span id="main_wm_qty2"></span><br></td>
-      <td><span id="color3"></span></td>
-      <td><span id="finish3"></span></td>
-      <td><span id="date3"></span></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>NO DATA</td>
-      <td><span id="grt_wm"></span><br> WELDMESH - GMC</td>
-      <td>Nos</td>
-      <td><span id="main_wm_qty3"></span></td>
-      <td><span id="color4"></span></td>
-      <td><span id="finish4"></span></td>
-      <td><span id="date4"></span></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>5</td>
       <td>NO DATA</td>
       <td>Fixator + Bolt For Fixator +Spring washer + Breackable nut +PVC threded dome nut cap<br> STORE - GKW</td>
       <td>SET</td>
@@ -1320,7 +1219,7 @@ function exportExcel() {
       <td></td>
     </tr> 
     <tr>
-      <td>6</td>
+      <td>4</td>
       <td>NO DATA</td>
       <td> Double Stretcher Clamp For Mesh Tighting<br> STORE - GKW</td>
       <td>SET</td>
@@ -1331,7 +1230,7 @@ function exportExcel() {
       <td></td>
     </tr>
     <tr>
-      <td>7</td>
+      <td>5</td>
       <td>NO DATA</td>
       <td> Hog Ring (3.5mm DIA)<br> STORE - GKW</td>
       <td>Nos</td>
@@ -1342,7 +1241,7 @@ function exportExcel() {
       <td></td>
     </tr>           
     <tr>
-      <td>8</td>
+      <td>6</td>
       <td>NO DATA</td>
       <td> <span id="footingp"></span><br> CONCRETE - GKW</td>
       <td>Nos</td>
@@ -1351,7 +1250,18 @@ function exportExcel() {
       <td>None</span></td>
       <td><span id="date9"></span></td>
       <td></td>
-    </tr>           
+    </tr>  
+     <tr>
+      <td>7</td>
+      <td>NO DATA</td>
+      <td> <span id="bpsize4"></span><br> FABRICATION - GKW</td>
+      <td>Nos</td>
+      <td><span id="baseplateqty3"></span></td>
+      <td><span id="color6"></span></td>
+      <td><span id="finish7"></span></td>
+      <td><span id="date10"></span></td>
+      <td></td>
+    </tr>            
   </table>
 </table>
 
@@ -1367,7 +1277,12 @@ function exportExcel() {
     Powered by LME Web Application<br>
   </div>
   <br><br><br><br>
-    <button onclick="exportExcel()" style="font-weight: bold;background-color: red;color: white;">Download All Excel</button>  
+    <button onclick="exportExcel()" style="font-weight: bold;background-color: red;color: white;">Download All Excel</button> 
+    
+    
+   
+
+
 </body>
 </html>
 

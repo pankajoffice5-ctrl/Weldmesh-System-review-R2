@@ -128,7 +128,7 @@
 
 
 
-  <form action="burried_single_crank_page-2.html" method="GET">
+  <form action="burried_double_crank_page-2.html" method="GET">
               <fieldset>
                 <br>
             <label for="ip">Post C/C (mm):</label>
@@ -184,7 +184,7 @@
             <option value="1000">1000</option>
         </select><br><br> 
 
-        <label for="cranksize">Single Crank Size incline dim. (mm):</label>
+        <label for="cranksize">Y Crank Size incline dim. (mm):</label>
         <select id="cranksize" name="cranksize">
             <option value="500">500</option>
             <option value="300">300</option>
@@ -203,15 +203,22 @@
 </fieldset>          <fieldset>
         <label for="fixatorqty">Fixator/Post (Nos):</label>
         <select id="fixatorqty" name="fixatorqty">
+            <option value="9">9</option>
             <option value="4">4</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
             <option value="6">6</option>
-            <option value="7">7</option>.
+            <option value="7">7</option>
             <option value="8">8</option>
             <option value="9">9</option>
             <option value="10">10</option>                        
+            <option value="11">11</option>                        
+            <option value="12">12</option>                        
+            <option value="13">13</option>                        
+            <option value="14">14</option>                        
+            <option value="15">15</option>                        
+            <option value="16">16</option>                      
         </select><br><br>
 
         <label for="strecher_clampqty">Double Stretcher Clamp/Post (Nos):</label>
@@ -651,8 +658,8 @@
     let result9 = ((ip + wiredia1 ) - 16 ).toFixed(0);    
     let result10 = ((ip + wiredia2 ) - 16 ).toFixed(0);    
     let result11 = (ip).toFixed(0);    
-    let result15 = (postheight).toFixed(0);    
-    let result16 = (cranksize).toFixed(0);    
+    let result15 = (postheight ).toFixed(0);    
+    let result16 = (cranksize * 2 ).toFixed(0);    
     let result17 = (cranksize + 300 ).toFixed(0);    
     let result20 = (burried).toFixed(0);    
     let result21 = (widthft).toFixed(0);    
@@ -666,8 +673,8 @@
     let result39 = (linespacing3).toFixed(1);    
     let result40 = (crimps1).toFixed(0);    
     let result41 = (crimps2).toFixed(0);    
-    let result42 = (postheight + cranksize + burried ).toFixed(0);
-    let totalHeight = postheight + cranksize + burried ;
+    let result42 = ( postheight + cranksize + cranksize + burried ).toFixed(0);
+    let totalHeight = (postheight + cranksize + burried + cranksize) ;
 
     let weightPerUnit = profileWeights[postprofile] || 0;
     let finalValue11 = (weightPerUnit * (totalHeight/1000)).toFixed(2);
@@ -713,7 +720,7 @@
     let part3 = ((wiredia2 * 0.1 * wiredia2 * 0.1 * Math.PI / 4 * 0.785 * result4 / 1000) * (result17 / crossspacing2 + 1));
     let part4 = ((wiredia2 * 0.1 * wiredia2 * 0.1 * Math.PI / 4 * 0.785 * (Number( result17 ) + Number( crimp2lent )) / 1000) * (result4 / linespacing2 + 1)); 
 
-    let result52 = (part3 + part4).toFixed(2);
+    let result52 =( (part3 + part4) * 2 ).toFixed(2);
     let result53 = (Number(result52) + (result52 * wm_scrap / 100 ) ).toFixed(2);
     let result53b = (Number(result52) + (result52 * bwm_scrap / 100 ) ).toFixed(2);
 
@@ -972,7 +979,9 @@
     localStorage.setItem("result130Value", bwm_scrap);
     localStorage.setItem("result131Value", result131); 
     localStorage.setItem("result132Value", result132);
-    localStorage.setItem("result133Value", crankdegree); 
+    localStorage.setItem("result133Value", crankdegree);
+    localStorage.setItem("result135Value", cranksize);
+
     
 
     localStorage.setItem("finalResult1", finalResult1);
@@ -988,7 +997,7 @@
     localStorage.setItem("finalValue11", finalValue11);
 
 
-    window.location.href = "burried_single_crank_page-2.html";
+    window.location.href = "burried_double_crank_page-2.html";
 
   }
 </script>

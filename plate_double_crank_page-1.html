@@ -128,7 +128,7 @@
 
 
 
-  <form action="burried_single_crank_page-2.html" method="GET">
+  <form action="plate_double_crank_page-2.html" method="GET">
               <fieldset>
                 <br>
             <label for="ip">Post C/C (mm):</label>
@@ -171,20 +171,21 @@
              <option value="3500">3500</option>
              <option value="4000">4000</option>
             </select><br><br>
-        <label for="burried">Burried Post blow FFL (mm):</label>
-        <select id="burried" name="burried">
-            <option value="500">500</option>
-             <option value="300">300</option>
-            <option value="400">400</option>
-            <option value="500">500</option>
-            <option value="600">600</option>
-            <option value="700">700</option>
-            <option value="800">800</option>
-            <option value="900">900</option>
-            <option value="1000">1000</option>
-        </select><br><br> 
 
-        <label for="cranksize">Single Crank Size incline dim. (mm):</label>
+      <label for="base_plate_lenght">Base Plate Lenght (mm):</label>
+             <input id="base_plate_lenght"name="base_plate_lenght" value="140" required>
+             <br><br>
+
+             <label for="base_plate_width">Base Plate Width (mm):</label>
+      <input id="base_plate_width"name="base_plate_width" value="140" required>
+      <br><br>
+      
+             <label for="base_plate_thk">Base Plate thikness (mm):</label>
+      <input id="base_plate_thk"name="base_plate_thk" value="10" required>
+        
+        <br><br> 
+
+        <label for="cranksize">Y Crank Size incline dim. (mm):</label>
         <select id="cranksize" name="cranksize">
             <option value="500">500</option>
             <option value="300">300</option>
@@ -571,7 +572,7 @@
     const cranksize = parseFloat(document.getElementById("cranksize").value) || 0; 
     const crossspacing3 = parseFloat(document.getElementById("crossspacing3").value) || 0; 
     const linespacing3 = parseFloat(document.getElementById("linespacing3").value) || 0; 
-    const burried = parseFloat(document.getElementById("burried").value) || 0; 
+
     const crimps1 = parseFloat(document.getElementById("crimps1").value) || 0; 
     const crimps2 = parseFloat(document.getElementById("crimps2").value) || 0; 
     const girate = parseFloat(document.getElementById("girate").value) || 0; 
@@ -589,6 +590,9 @@
     const crossspacing1 = parseFloat(document.getElementById("crossspacing1").value) || 0;
     const crankdegree = parseFloat(document.getElementById("crankdegree").value) + "°" || 0;
 
+  const base_plate_lenght = parseFloat(document.getElementById("base_plate_lenght").value) || 0; 
+  const base_plate_width = parseFloat(document.getElementById("base_plate_width").value) || 0; 
+  const base_plate_thk = parseFloat(document.getElementById("base_plate_thk").value) || 0;
     
 
 
@@ -652,9 +656,14 @@
     let result10 = ((ip + wiredia2 ) - 16 ).toFixed(0);    
     let result11 = (ip).toFixed(0);    
     let result15 = (postheight).toFixed(0);    
-    let result16 = (cranksize).toFixed(0);    
+    let result16 = (cranksize * 2 ).toFixed(0);    
     let result17 = (cranksize + 300 ).toFixed(0);    
-    let result20 = (burried).toFixed(0);    
+
+    let result201 = (base_plate_lenght).toFixed(0);    //base plate lenght
+    let result202 = (base_plate_width).toFixed(0);    //base plate width
+    let result203 = (base_plate_thk).toFixed(0);
+
+
     let result21 = (widthft).toFixed(0);    
     let result23 = (lengthFt).toFixed(0);    
     let result28 = (heightft).toFixed(0);    
@@ -666,11 +675,32 @@
     let result39 = (linespacing3).toFixed(1);    
     let result40 = (crimps1).toFixed(0);    
     let result41 = (crimps2).toFixed(0);    
-    let result42 = (postheight + cranksize + burried ).toFixed(0);
-    let totalHeight = postheight + cranksize + burried ;
+    let result42 = (postheight + cranksize + cranksize ).toFixed(0);
+    let totalHeight = ( postheight + cranksize + cranksize) ;
 
     let weightPerUnit = profileWeights[postprofile] || 0;
     let finalValue11 = (weightPerUnit * (totalHeight/1000)).toFixed(2);
+
+    let baseplate_wt = ( base_plate_lenght * base_plate_width * base_plate_thk * 0.00000785 ) .toFixed(2);
+    let baseplate_ms = ( baseplate_wt * msrate ) .toFixed(2);
+    let baseplate_gi = ( baseplate_wt * girate ) .toFixed(2);
+    let baseplate_pc = ( ( Number(base_plate_lenght * base_plate_width * 2 / 1000000) + Number(base_plate_lenght * base_plate_thk * 2 / 1000000)
+     + Number(base_plate_width * base_plate_thk * 2 / 1000000) ) * pcrate ) .toFixed(2);
+    let baseplate_price = ( Number( baseplate_ms ) + Number( baseplate_gi ) + Number( baseplate_pc ) ) .toFixed(2);
+
+
+    
+  
+
+    let baseplate_ms1 = ( baseplate_wt * bmsrate ) .toFixed(2);
+    let baseplate_gi1 = ( baseplate_wt * bgirate ) .toFixed(2);
+    let baseplate_pc1 = ( ( Number(base_plate_lenght * base_plate_width * 2 / 1000000) + Number(base_plate_lenght * base_plate_thk * 2 / 1000000)
+     + Number(base_plate_width * base_plate_thk * 2 / 1000000) ) * bpcrate ) .toFixed(2);
+    let baseplate_price1 = ( Number( baseplate_ms1 ) + Number( baseplate_gi1 ) + Number( baseplate_pc1 ) ) .toFixed(2);
+    
+
+
+
 
     let finishPerUnit = profilefinish[postprofile] || 0;
     let finalValue12 = finishPerUnit * (totalHeight/1000);
@@ -780,7 +810,8 @@
     let result84b = ( result69 * result79b ) .toFixed(2) ;
 
 
-
+    let base_plate_price_total = ( baseplate_price * result69 ) .toFixed(2);
+    let base_plate_price_total1 = ( baseplate_price1 * result69 ) .toFixed(2);
 
 
     let result85 = (
@@ -790,7 +821,7 @@
 
          let result86 = (
     (Number(result80) + Number(result81) + Number(result82)) + 
-     (Number(result83) + Number(result84) + Number(result85))
+     (Number(result83) + Number(result84) + Number(result85) + Number(base_plate_price_total))
      ).toFixed(2);
 
 
@@ -802,7 +833,7 @@
 
          let result86b = (
     (Number(result80b) + Number(result81b) + Number(result82b)) + 
-     (Number(result83b) + Number(result84b) + Number(result85b))
+     (Number(result83b) + Number(result84b) + Number(result85b) + Number(base_plate_price_total1))
      ).toFixed(2);
 
 
@@ -828,6 +859,7 @@
     let result131 =  Number( lengthFt ) + " x " + Number( widthft ) + " x " + Number( heightft ) + " mm, Concrate footing" ; 
     let result132 = ( result69 * result78 ) .toFixed(2) ;
 
+    let baseplate_totalwt = (baseplate_wt * result69 ) .toFixed(2);
 
 
     let finalResult1 = wiredia1 + "mm DIA. WIRE, MESH SIZE " + crossspacing1 + "X" + linespacing1 + "mm," ; 
@@ -846,6 +878,8 @@
     let finalResult8 = "SS-316, M8X" + modifiedProfile + "mm.LG BOLT WITH BREAKABLE NUT BLACK COLOR";
     let finalResult9 = "SS M8X" + modifiedProfile + "mm.LONG BOLT (J)"; 
     let finalResult10 = postprofile ; 
+    let finalResult12 = base_plate_lenght + "x" + base_plate_width + "x" + base_plate_thk + "mm.thk BASE PLATE"; 
+    let finalResult13 = base_plate_lenght + "x" + base_plate_width + "x" + base_plate_thk ;
 
 
 
@@ -862,7 +896,7 @@
     localStorage.setItem("result15Value", result15);
     localStorage.setItem("result16Value", result16);
     localStorage.setItem("result17Value", result17);
-    localStorage.setItem("result20Value", result20);
+
     localStorage.setItem("result21Value", result21);
     localStorage.setItem("result23Value", result23);
     localStorage.setItem("result28Value", result28);
@@ -969,11 +1003,31 @@
     localStorage.setItem("result127Value", estimationlm); 
     localStorage.setItem("result128Value", budgetlm);
     localStorage.setItem("result129Value", wm_scrap);
-    localStorage.setItem("result130Value", bwm_scrap);
+    localStorage.setItem("result130Value", bwm_scrap);               
     localStorage.setItem("result131Value", result131); 
     localStorage.setItem("result132Value", result132);
-    localStorage.setItem("result133Value", crankdegree); 
+    localStorage.setItem("result133Value", crankdegree);
+    localStorage.setItem("result134Value", baseplate_wt);
+    localStorage.setItem("result135Value", baseplate_ms);
+    localStorage.setItem("result136Value", baseplate_gi);
+    localStorage.setItem("result137Value", baseplate_pc);
+    localStorage.setItem("result138Value", baseplate_price);
+    localStorage.setItem("result139Value", base_plate_price_total);
+
+    localStorage.setItem("result140Value", baseplate_ms1);
+    localStorage.setItem("result141Value", baseplate_gi1);
+    localStorage.setItem("result142Value", baseplate_pc1);
+    localStorage.setItem("result143Value", baseplate_price1);
+    localStorage.setItem("result144Value", base_plate_price_total1);
+    localStorage.setItem("result145Value", baseplate_totalwt);
+    localStorage.setItem("result146Value", cranksize);
     
+
+
+
+
+
+ 
 
     localStorage.setItem("finalResult1", finalResult1);
     localStorage.setItem("finalResult2", finalResult2);
@@ -986,9 +1040,11 @@
     localStorage.setItem("finalResult9", finalResult9);
     localStorage.setItem("finalResult10", finalResult10);
     localStorage.setItem("finalValue11", finalValue11);
+    localStorage.setItem("finalResult12", finalResult12);
+    localStorage.setItem("finalResult13", finalResult13);
 
 
-    window.location.href = "burried_single_crank_page-2.html";
+    window.location.href = "plate_double_crank_page-2.html";
 
   }
 </script>

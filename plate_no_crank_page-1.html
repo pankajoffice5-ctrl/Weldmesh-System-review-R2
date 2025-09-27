@@ -79,7 +79,7 @@
                 <div class="summary-item">
                     <span class="wmrate">Weldmesh</span>
             <td><input type="number" id="wmrate" value="12.0"><input type="number" id="bwmrate" value="8.0"><span class="unit">
-                <img src="DRAWING/aed.png" alt="AED" style="width:10x; height:10px;  vertical-align:baseline;">/Kg</span></td>
+                <img src="DRAWING/aed.png" alt="AED" style="width:10x; height:10px;  vertical-align:baseline;">/kg</span></td>
                 </div>
                 <div class="summary-item">
                     <span class="metalcaprate">Metal Cap</span>
@@ -128,7 +128,7 @@
 
 
 
-  <form action="burried_single_crank_page-2.html" method="GET">
+  <form action="plate_no_crank_page-2.html" method="GET">
               <fieldset>
                 <br>
             <label for="ip">Post C/C (mm):</label>
@@ -171,35 +171,19 @@
              <option value="3500">3500</option>
              <option value="4000">4000</option>
             </select><br><br>
-        <label for="burried">Burried Post blow FFL (mm):</label>
-        <select id="burried" name="burried">
-            <option value="500">500</option>
-             <option value="300">300</option>
-            <option value="400">400</option>
-            <option value="500">500</option>
-            <option value="600">600</option>
-            <option value="700">700</option>
-            <option value="800">800</option>
-            <option value="900">900</option>
-            <option value="1000">1000</option>
-        </select><br><br> 
 
-        <label for="cranksize">Single Crank Size incline dim. (mm):</label>
-        <select id="cranksize" name="cranksize">
-            <option value="500">500</option>
-            <option value="300">300</option>
-            <option value="400">400</option>
-            <option value="500">500</option>
-            <option value="600">600</option>
-            <option value="700">700</option>
-        </select><br><br>
-         <label for="crankdegree">Crank Degrees (°):</label>
-        <select id="crankdegree" name="crankdegree">
-            <option value="30°">30°</option>
-            <option value="45°">45°</option>
-            <option value="60°">60°</option>
-        </select>       
-        <br><br>
+      <label for="base_plate_lenght">Base Plate Lenght (mm):</label>
+             <input id="base_plate_lenght"name="base_plate_lenght" value="140" required>
+             <br><br>
+
+             <label for="base_plate_width">Base Plate Width (mm):</label>
+      <input id="base_plate_width"name="base_plate_width" value="140" required>
+      <br><br>
+      
+             <label for="base_plate_thk">Base Plate thikness (mm):</label>
+      <input id="base_plate_thk"name="base_plate_thk" value="10" required>
+        
+        <br><br> 
 </fieldset>          <fieldset>
         <label for="fixatorqty">Fixator/Post (Nos):</label>
         <select id="fixatorqty" name="fixatorqty">
@@ -322,53 +306,7 @@
             <option value="6">6</option>
             </select><br><br>
 
-     </fieldset>     <fieldset>
-        <label for="wiredia2">Wire Dia for Outrigger Panel (mm):</label>
-        <select id="wiredia2" name="wiredia2">
-            <option value="4">4</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-        </select><br><br>
-        <label for="linespacing2">Horizontal wire mesh (mm):</label>
-        <select id="linespacing2" name="linespacing2">
-            <option value="50">50</option>
-            <option value="12.5">12.5</option>
-            <option value="25">25</option>
-            <option value="50">50</option>
-            <option value="75">75</option>
-            <option value="100">100</option>
-            <option value="150">150</option>
-            <option value="200">200</option>
-        </select><br><br>
-        <label for="crossspacing2">Vertical wire mesh (mm):</label>
-        <select id="crossspacing2" name="crossspacing2">
-            <option value="50">50</option>
-            <option value="12.5">12.5</option>
-            <option value="25">25</option>
-            <option value="50">50</option>
-            <option value="75">75</option>
-            <option value="100">100</option>
-            <option value="150">150</option>
-            <option value="200">200</option>
-        </select>
-            </select><br><br>
-            <label for="crimps2">Crimps for Outrigger Panel (mm):</label>
-        <select id="crimps2" name="crimps2">
-            <option value="2">2</option>
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            </select><br><br>
-</fieldset>  <fieldset>     
+     </fieldset>     <fieldset>     
             <label for="grounting_panel_height">Grouting Panel Height (mm):</label>
         <select id="grounting_panel_height" name="grounting_panel_height">
             <option value="800">800</option>
@@ -563,17 +501,16 @@
     const heightft = parseFloat(document.getElementById("heightft").value) || 0; 
     const postheight = parseFloat(document.getElementById("postheight").value) || 0; 
 
-    const wiredia2 = parseFloat(document.getElementById("wiredia2").value) || 0; 
+
     const wiredia3 = parseFloat(document.getElementById("wiredia3").value) || 0; 
     const grounting_panel_height = parseFloat(document.getElementById("grounting_panel_height").value) || 0; 
-    const crossspacing2 = parseFloat(document.getElementById("crossspacing2").value) || 0; 
-    const linespacing2 = parseFloat(document.getElementById("linespacing2").value) || 0; 
-    const cranksize = parseFloat(document.getElementById("cranksize").value) || 0; 
+
+
     const crossspacing3 = parseFloat(document.getElementById("crossspacing3").value) || 0; 
     const linespacing3 = parseFloat(document.getElementById("linespacing3").value) || 0; 
-    const burried = parseFloat(document.getElementById("burried").value) || 0; 
+
     const crimps1 = parseFloat(document.getElementById("crimps1").value) || 0; 
-    const crimps2 = parseFloat(document.getElementById("crimps2").value) || 0; 
+
     const girate = parseFloat(document.getElementById("girate").value) || 0; 
     const pcrate = parseFloat(document.getElementById("pcrate").value) || 0; 
     const msrate = parseFloat(document.getElementById("msrate").value) || 0; 
@@ -587,8 +524,11 @@
     const wiredia1 = parseFloat(document.getElementById("wiredia1").value) || 0; 
     const linespacing1 = parseFloat(document.getElementById("linespacing1").value) || 0; 
     const crossspacing1 = parseFloat(document.getElementById("crossspacing1").value) || 0;
-    const crankdegree = parseFloat(document.getElementById("crankdegree").value) + "°" || 0;
 
+
+  const base_plate_lenght = parseFloat(document.getElementById("base_plate_lenght").value) || 0; 
+  const base_plate_width = parseFloat(document.getElementById("base_plate_width").value) || 0; 
+  const base_plate_thk = parseFloat(document.getElementById("base_plate_thk").value) || 0;
     
 
 
@@ -649,28 +589,52 @@
     let result6 = (Number(postheight) + Number(wiredia1)).toFixed(0); 
     let result7 = ((grounting_panel_height)).toFixed(0); 
     let result9 = ((ip + wiredia1 ) - 16 ).toFixed(0);    
-    let result10 = ((ip + wiredia2 ) - 16 ).toFixed(0);    
+   
     let result11 = (ip).toFixed(0);    
     let result15 = (postheight).toFixed(0);    
-    let result16 = (cranksize).toFixed(0);    
-    let result17 = (cranksize + 300 ).toFixed(0);    
-    let result20 = (burried).toFixed(0);    
+ 
+
+    let result201 = (base_plate_lenght).toFixed(0);    //base plate lenght
+    let result202 = (base_plate_width).toFixed(0);    //base plate width
+    let result203 = (base_plate_thk).toFixed(0);
+
+
     let result21 = (widthft).toFixed(0);    
     let result23 = (lengthFt).toFixed(0);    
     let result28 = (heightft).toFixed(0);    
     let result30 = (crossspacing1).toFixed(1);    
     let result32 = (linespacing1).toFixed(1);    
-    let result34 = (crossspacing2).toFixed(1);    
-    let result36 = (linespacing2).toFixed(1);    
+  
     let result37 = (crossspacing3).toFixed(1);    
     let result39 = (linespacing3).toFixed(1);    
     let result40 = (crimps1).toFixed(0);    
-    let result41 = (crimps2).toFixed(0);    
-    let result42 = (postheight + cranksize + burried ).toFixed(0);
-    let totalHeight = postheight + cranksize + burried ;
+
+    let result42 = (postheight ).toFixed(0);
+    let totalHeight = ( postheight ) ;
 
     let weightPerUnit = profileWeights[postprofile] || 0;
     let finalValue11 = (weightPerUnit * (totalHeight/1000)).toFixed(2);
+
+    let baseplate_wt = ( base_plate_lenght * base_plate_width * base_plate_thk * 0.00000785 ) .toFixed(2);
+    let baseplate_ms = ( baseplate_wt * msrate ) .toFixed(2);
+    let baseplate_gi = ( baseplate_wt * girate ) .toFixed(2);
+    let baseplate_pc = ( ( Number(base_plate_lenght * base_plate_width * 2 / 1000000) + Number(base_plate_lenght * base_plate_thk * 2 / 1000000)
+     + Number(base_plate_width * base_plate_thk * 2 / 1000000) ) * pcrate ) .toFixed(2);
+    let baseplate_price = ( Number( baseplate_ms ) + Number( baseplate_gi ) + Number( baseplate_pc ) ) .toFixed(2);
+
+
+    
+  
+
+    let baseplate_ms1 = ( baseplate_wt * bmsrate ) .toFixed(2);
+    let baseplate_gi1 = ( baseplate_wt * bgirate ) .toFixed(2);
+    let baseplate_pc1 = ( ( Number(base_plate_lenght * base_plate_width * 2 / 1000000) + Number(base_plate_lenght * base_plate_thk * 2 / 1000000)
+     + Number(base_plate_width * base_plate_thk * 2 / 1000000) ) * bpcrate ) .toFixed(2);
+    let baseplate_price1 = ( Number( baseplate_ms1 ) + Number( baseplate_gi1 ) + Number( baseplate_pc1 ) ) .toFixed(2);
+    
+
+
+
 
     let finishPerUnit = profilefinish[postprofile] || 0;
     let finalValue12 = finishPerUnit * (totalHeight/1000);
@@ -694,7 +658,7 @@
     let result47 = (wiredia1).toFixed(2);
 
     let crimp1lent = ( crimps1 * 15 )
-    let crimp2lent = ( crimps2 * 15 )
+
 
     let part1 = ((wiredia1 * 0.1 * wiredia1 * 0.1 * Math.PI / 4 * 0.785 * result3 / 1000) * (result6 / crossspacing1 + 1));
     let part2 = ((wiredia1 * 0.1 * wiredia1 * 0.1 * Math.PI / 4 * 0.785 * (Number( result6 ) + Number( crimp1lent )) / 1000) * (result3 / linespacing1 + 1)); 
@@ -708,18 +672,9 @@
 
     let result50b = (result49 * bwmrate ).toFixed(2)    
 
-    let result51 = (wiredia2).toFixed(2); 
-
-    let part3 = ((wiredia2 * 0.1 * wiredia2 * 0.1 * Math.PI / 4 * 0.785 * result4 / 1000) * (result17 / crossspacing2 + 1));
-    let part4 = ((wiredia2 * 0.1 * wiredia2 * 0.1 * Math.PI / 4 * 0.785 * (Number( result17 ) + Number( crimp2lent )) / 1000) * (result4 / linespacing2 + 1)); 
-
-    let result52 = (part3 + part4).toFixed(2);
-    let result53 = (Number(result52) + (result52 * wm_scrap / 100 ) ).toFixed(2);
-    let result53b = (Number(result52) + (result52 * bwm_scrap / 100 ) ).toFixed(2);
 
 
-    let result54 = (result53 * wmrate ).toFixed(2)
-    let result54b = (result53 * bwmrate ).toFixed(2)
+
 
     let result55 = (wiredia3).toFixed(2); 
 
@@ -770,17 +725,18 @@
 
     
     let result81 = ( result70 * result50 ).toFixed(2);
-    let result82 = ( result70 * result54 ).toFixed(2);
+
     let result83 = ( result70 * result58 ).toFixed(2);
     let result84 = ( result69 * result79 ) .toFixed(2) ;
 
     let result81b = ( result70 * result50b ).toFixed(2);
-    let result82b = ( result70 * result54b ).toFixed(2);
+
     let result83b = ( result70 * result58b ).toFixed(2);
     let result84b = ( result69 * result79b ) .toFixed(2) ;
 
 
-
+    let base_plate_price_total = ( baseplate_price * result69 ) .toFixed(2);
+    let base_plate_price_total1 = ( baseplate_price1 * result69 ) .toFixed(2);
 
 
     let result85 = (
@@ -789,8 +745,8 @@
      ).toFixed(2);
 
          let result86 = (
-    (Number(result80) + Number(result81) + Number(result82)) + 
-     (Number(result83) + Number(result84) + Number(result85))
+    (Number(result80) + Number(result81)) + 
+     (Number(result83) + Number(result84) + Number(result85) + Number(base_plate_price_total))
      ).toFixed(2);
 
 
@@ -801,8 +757,8 @@
      ).toFixed(2);
 
          let result86b = (
-    (Number(result80b) + Number(result81b) + Number(result82b)) + 
-     (Number(result83b) + Number(result84b) + Number(result85b))
+    (Number(result80b) + Number(result81b) ) + 
+     (Number(result83b) + Number(result84b) + Number(result85b) + Number(base_plate_price_total1))
      ).toFixed(2);
 
 
@@ -814,7 +770,7 @@
 
     let result92 = ( result69 * finalValue11 ) .toFixed(2) ;
     let result95 = ( result70 * result48 ) .toFixed(2) ;
-    let result98 = ( result70 * result52 ) .toFixed(2) ;
+
     let result101 = ( result70 * result56 ) .toFixed(0) ;
     let result102 = ( result69 * result59 ) .toFixed(0) ;
     let result103 = ( result69 * strecher_clampqty ) .toFixed(0) ;  
@@ -828,12 +784,12 @@
     let result131 =  Number( lengthFt ) + " x " + Number( widthft ) + " x " + Number( heightft ) + " mm, Concrate footing" ; 
     let result132 = ( result69 * result78 ) .toFixed(2) ;
 
+    let baseplate_totalwt = (baseplate_wt * result69 ) .toFixed(2);
 
 
     let finalResult1 = wiredia1 + "mm DIA. WIRE, MESH SIZE " + crossspacing1 + "X" + linespacing1 + "mm," ; 
     let finalResult2 ="PANEL SIZE " + result3 + "mm. WIDE X " + result6  + "mm. HEIGHT," ; 
-    let finalResult3 = wiredia2 + "mm DIA. WIRE, MESH SIZE " + crossspacing2 + "X" + linespacing2 + "mm," ; 
-    let finalResult4 ="PANEL SIZE " + result4 + "mm. WIDE X " + cranksize  + "mm. HEIGHT," ; 
+ 
     let finalResult5 = wiredia3 + "mm DIA. WIRE, MESH SIZE " + crossspacing3 + "X" + linespacing3 + "mm," ; 
     let finalResult6 ="PANEL SIZE " + result5 + "mm. WIDE X " + result7  + "mm. HEIGHT," ; 
     let finalResult7 = postprofile + " THK. MS RHS FENCE POST @ EVERY " + ip  + "mm. C/C" ;
@@ -846,6 +802,8 @@
     let finalResult8 = "SS-316, M8X" + modifiedProfile + "mm.LG BOLT WITH BREAKABLE NUT BLACK COLOR";
     let finalResult9 = "SS M8X" + modifiedProfile + "mm.LONG BOLT (J)"; 
     let finalResult10 = postprofile ; 
+    let finalResult12 = base_plate_lenght + "x" + base_plate_width + "x" + base_plate_thk + "mm.thk BASE PLATE"; 
+    let finalResult13 = base_plate_lenght + "x" + base_plate_width + "x" + base_plate_thk ;
 
 
 
@@ -857,23 +815,23 @@
     localStorage.setItem("result6Value", result6);
     localStorage.setItem("result7Value", result7);
     localStorage.setItem("result9Value", result9);
-    localStorage.setItem("result10Value", result10);
+
     localStorage.setItem("result11Value", result11);
     localStorage.setItem("result15Value", result15);
-    localStorage.setItem("result16Value", result16);
-    localStorage.setItem("result17Value", result17);
-    localStorage.setItem("result20Value", result20);
+
+
+
     localStorage.setItem("result21Value", result21);
     localStorage.setItem("result23Value", result23);
     localStorage.setItem("result28Value", result28);
     localStorage.setItem("result30Value", result30);
     localStorage.setItem("result32Value", result32);
-    localStorage.setItem("result34Value", result34);
-    localStorage.setItem("result36Value", result36);
+
+
     localStorage.setItem("result37Value", result37);
     localStorage.setItem("result39Value", result39);
     localStorage.setItem("result40Value", result40);
-    localStorage.setItem("result41Value", result41);
+
     localStorage.setItem("result42Value", result42);
     localStorage.setItem("result43Value", result43);
     localStorage.setItem("result43bValue", result43b);
@@ -889,12 +847,9 @@
     localStorage.setItem("result49bValue", result49b);
     localStorage.setItem("result50Value", result50);
     localStorage.setItem("result50bValue", result50b);
-    localStorage.setItem("result51Value", result51);
-    localStorage.setItem("result52Value", result52);
-    localStorage.setItem("result53Value", result53);
-    localStorage.setItem("result53bValue", result53b);
-    localStorage.setItem("result54Value", result54);
-    localStorage.setItem("result54bValue", result54b);
+
+
+
     localStorage.setItem("result55Value", result55);
     localStorage.setItem("result56Value", result56);
     localStorage.setItem("result57Value", result57);
@@ -926,13 +881,13 @@
     localStorage.setItem("result80Value", result80);
     localStorage.setItem("result80bValue", result80b);
     localStorage.setItem("result81Value", result81);
-    localStorage.setItem("result82Value", result82);
+
     localStorage.setItem("result83Value", result83);
     localStorage.setItem("result84Value", result84);
     localStorage.setItem("result85Value", result85);
     localStorage.setItem("result86Value", result86);
     localStorage.setItem("result81bValue", result81b);
-    localStorage.setItem("result82bValue", result82b);
+
     localStorage.setItem("result83bValue", result83b);
     localStorage.setItem("result84bValue", result84b);
     localStorage.setItem("result85bValue", result85b);
@@ -944,7 +899,7 @@
     localStorage.setItem("result91Value", finish);
     localStorage.setItem("result92Value", result92);
     localStorage.setItem("result95Value", result95);    
-    localStorage.setItem("result98Value", result98); 
+
     localStorage.setItem("result101Value", result101); 
     localStorage.setItem("result102Value", result102); 
     localStorage.setItem("result103Value", result103); 
@@ -969,16 +924,36 @@
     localStorage.setItem("result127Value", estimationlm); 
     localStorage.setItem("result128Value", budgetlm);
     localStorage.setItem("result129Value", wm_scrap);
-    localStorage.setItem("result130Value", bwm_scrap);
+    localStorage.setItem("result130Value", bwm_scrap);               
     localStorage.setItem("result131Value", result131); 
     localStorage.setItem("result132Value", result132);
-    localStorage.setItem("result133Value", crankdegree); 
+
+    localStorage.setItem("result134Value", baseplate_wt);
+    localStorage.setItem("result135Value", baseplate_ms);
+    localStorage.setItem("result136Value", baseplate_gi);
+    localStorage.setItem("result137Value", baseplate_pc);
+    localStorage.setItem("result138Value", baseplate_price);
+    localStorage.setItem("result139Value", base_plate_price_total);
+
+    localStorage.setItem("result140Value", baseplate_ms1);
+    localStorage.setItem("result141Value", baseplate_gi1);
+    localStorage.setItem("result142Value", baseplate_pc1);
+    localStorage.setItem("result143Value", baseplate_price1);
+    localStorage.setItem("result144Value", base_plate_price_total1);
+    localStorage.setItem("result145Value", baseplate_totalwt);
+
     
+
+
+
+
+
+ 
 
     localStorage.setItem("finalResult1", finalResult1);
     localStorage.setItem("finalResult2", finalResult2);
-    localStorage.setItem("finalResult3", finalResult3);
-    localStorage.setItem("finalResult4", finalResult4);
+
+
     localStorage.setItem("finalResult5", finalResult5);
     localStorage.setItem("finalResult6", finalResult6);
     localStorage.setItem("finalResult7", finalResult7);
@@ -986,9 +961,11 @@
     localStorage.setItem("finalResult9", finalResult9);
     localStorage.setItem("finalResult10", finalResult10);
     localStorage.setItem("finalValue11", finalValue11);
+    localStorage.setItem("finalResult12", finalResult12);
+    localStorage.setItem("finalResult13", finalResult13);
 
 
-    window.location.href = "burried_single_crank_page-2.html";
+    window.location.href = "plate_no_crank_page-2.html";
 
   }
 </script>
@@ -1008,20 +985,6 @@
     crossspacing1.addEventListener("change", updateWireDia);
   </script>
 
-
-<script>
-    function updateWireDia() {
-      if (linespacing2.value === "12.5" || crossspacing2.value === "12.5") {
-        wiredia2.value = "4";   // force to 4 mm
-        wiredia2.disabled = true; // lock selection
-      } else {
-        wiredia2.disabled = false; // unlock selection
-      }
-    }
-
-    linespacing2.addEventListener("change", updateWireDia);
-    crossspacing2.addEventListener("change", updateWireDia);
-</script>
 
 
 

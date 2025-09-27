@@ -62,7 +62,15 @@
 }
 
 /* First button blue */
-.button-group button:first-child {
+.button-group button:first-child,
+.button-group button:nth-child(2),
+.button-group button:nth-child(3),
+.button-group button:nth-child(4),
+.button-group button:nth-child(5),
+.button-group button:nth-child(6),
+.button-group button:nth-child(7),
+.button-group button:nth-child(9),
+.button-group button:nth-child(8) {
   background-color: #3498db;
 }
 
@@ -72,23 +80,24 @@
 }
 
 
+
   </style>
 </head>
 <body>
   <div class="container">
 <img id="LMELOGO" src="DRAWING/LMELOGO.png" alt="LMELOGO">
       <h1>LINK MIDDLE EAST</h1>  
-    <h2>Fixator Weldmesh Fencing System</h2>
+    <h2>Fixator Weldmesh Fencing (X-DAS)</h2>
     <div class="button-group">
       <button onclick="openPage('burried_single_crank_page-1.html')">● POST BURRIED+SINGLE CRANK+GROUTING PANEL</button>
-      <button onclick="">● POST BURRIED+DOUBLE CRANK+GROUTING PANEL</button>
-      <button onclick="">● POST BASE PLATE+SINGLE CRANK+GROUTING PANEL</button>
-      <button onclick="">● POST BASE PLATE+DOUBLE CRANK+GROUTING PANEL</button>
-      <button onclick="">● POST BASE PLATE+NO CRANK+GROUTING PANEL</button>
-      <button onclick="">● POST BASE PLATE+SINGLE CRANK+NO GROUTING PANEL</button>
-      <button onclick="">● POST BASE PLATE+DOUBLE CRANK+NO GROUTING PANEL</button>
-      <button onclick="">● POST BURRIED+NO CRANK+ NO GROUTING PANEL</button>
-      <button onclick="">● POST BASE PLATE+NO CRANK+ NO GROUTING PANEL</button>
+      <button onclick="openPage('burried_double_crank_page-1.html')">● POST BURRIED+DOUBLE CRANK+GROUTING PANEL</button>
+      <button onclick="openPage('plate_single_crank_page-1.html')">● POST BASE PLATE+SINGLE CRANK+GROUTING PANEL</button>
+      <button onclick="openPage('plate_double_crank_page-1.html')">● POST BASE PLATE+DOUBLE CRANK+GROUTING PANEL</button>
+      <button onclick="openPage('plate_no_crank_page-1.html')">● POST BASE PLATE+NO CRANK+GROUTING PANEL</button>
+      <button onclick="openPage('plate_single_crank_no_burried_page-1.html')">● POST BASE PLATE+SINGLE CRANK+NO GROUTING PANEL</button>
+      <button onclick="openPage('plate_double_crank_no_burried_page-1.html')">● POST BASE PLATE+DOUBLE CRANK+NO GROUTING PANEL</button>
+      <button onclick="openPage('burried_no_crank_no_grt_page-1.html')">● POST BURRIED+NO CRANK+ NO GROUTING PANEL</button>
+      <button onclick="openPage('plate_no_crank_no_burried_page-1.html')">● POST BASE PLATE+NO CRANK+ NO GROUTING PANEL</button>
     </div>
   </div>
   <script>

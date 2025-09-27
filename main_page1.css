@@ -24,7 +24,7 @@ a {
     flex-direction: column; 
    display: flex;
     align-items: center;
-    margin-right: 80vh;
+    margin-right: 90vh;
 }
 a:hover {
 
@@ -88,6 +88,8 @@ header .subtitle {
     color: #2c3e50;
     text-align: center;
     margin-left: 15vh;
+ 
+    
 }
 .summary-item {
     display: flex;
@@ -116,7 +118,6 @@ header .subtitle {
 }
 
 
-
 form {
     background-color: #91e2b3;
     padding: 25px 30px;
@@ -124,6 +125,7 @@ form {
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     width: 600px;
     box-sizing: border-box;
+    margin-top: 1.5vh; /* 10% vertical gap between forms */
 }
 
 form label {
@@ -247,18 +249,13 @@ header .subtitle {
 
 
 
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #2c3e50;
-}
-
 .production-rq {
     display: flex;
     justify-content: center; 
     align-items: center;
     margin: 10px 0;
     gap: 12px;
+    margin-top: 1.5vh; /* 10% vertical gap between forms */
 }
 
 .production-rq label {
@@ -277,4 +274,3 @@ h2 {
     font-size: 14px;
     box-sizing: border-box;
 }
-

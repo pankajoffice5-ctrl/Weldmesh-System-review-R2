@@ -2,15 +2,15 @@
 <html>
 <head>
   <title>POST BURRIED+SINGLE CRANK+GROUNTING PANEL</title>
-  <link rel="stylesheet" href="burried_single_crank_page-2.css">
+  <link rel="stylesheet" href="burried_double_crank_page-2.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
 <body>
 
 
 <div id="container">
-  <img id="drawing" src="DRAWING/DRAWING-1.jpg" alt="drawing">
-<p>POST BURRIED+SINGLE CRANK+GROUNTING PANEL</p>
+  <img id="drawing" src="DRAWING/DRAWING-2.jpg" alt="drawing">
+<p>POST BURRIED+ Y CRANK+GROUNTING PANEL</p>
 
   <label id="result1"></label>
   <label id="result2"></label>
@@ -27,7 +27,7 @@
   <label id="result13"></label> <!--ip c/c-->
   <label id="result14"></label> <!--ip c/c-->
   <label id="result15"></label> <!--post height-->
-  <label id="result16"></label> <!--crank height-->
+  <label id="result135"></label> <!--crank height-->
   <label id="result17"></label> <!--outrigger panel height-->
   <label id="result18"></label> <!--outrigger panel height-->
   <label id="result19"></label> <!--outrigger panel height-->
@@ -53,7 +53,8 @@
   <label id="result39"></label> <!--outrigger panel vertical-->
   <label id="result40"></label> <!--crimp1-->
   <label id="result41"></label> <!--crimp2-->
-  <label id="result133"></label> <!--crimp2-->
+  <label id="result133"></label> 
+  <label id="result134"></label> 
 
 
 
@@ -99,6 +100,7 @@ let value39 = localStorage.getItem("result39Value"); // grounting panel panel ve
 let value40 = localStorage.getItem("result40Value"); // crimp1
 let value41 = localStorage.getItem("result41Value"); // crimp2
 let crankdegree = localStorage.getItem("result133Value"); // crimp2
+let cranksize = localStorage.getItem("result135Value"); // crimp2
 
 
 
@@ -117,7 +119,7 @@ document.getElementById("result12").innerText = value11;// ip c/c
 document.getElementById("result13").innerText = value11;// ip c/c
 document.getElementById("result14").innerText = value11;// ip c/c
 document.getElementById("result15").innerText = value15;// post height
-document.getElementById("result16").innerText = value16;// crank height
+
 document.getElementById("result17").innerText = value17;// outrigger panel height
 document.getElementById("result18").innerText = value17;// outrigger panel height
 document.getElementById("result19").innerText = value17;// outrigger panel height
@@ -143,7 +145,10 @@ document.getElementById("result38").innerText = value37;// grounting panel horim
 document.getElementById("result39").innerText = value39;// grounting panel verical
 document.getElementById("result40").innerText = "MAIN PANEL CRIMPS- " + value40 + " Nos";// crimp1
 document.getElementById("result41").innerText = "OUTRIGGER PANEL CRIMPS- " + value41 + " Nos";// crimp2
-document.getElementById("result133").innerText = crankdegree;// grounting panel verical
+document.getElementById("result133").innerText = crankdegree;
+document.getElementById("result134").innerText = crankdegree;
+document.getElementById("result135").innerText = cranksize;
+
 
 let finalResult1 = localStorage.getItem("finalResult1"); 
 let finalResult2 = localStorage.getItem("finalResult2"); 
@@ -235,7 +240,7 @@ document.getElementById("finalResult11").innerText = finalResult9;
         <tr>
           <th>Post Profile</th>
           <th>Main Height from FFL</th>
-          <th>Crank Length inclined</th>
+          <th>Crank Length inclined (both side)</th>
           <th>Burried from FFL</th>
           <th>Total Height</th>
           <th>Total Weight</th>
@@ -305,9 +310,9 @@ document.getElementById("finalResult11").innerText = finalResult9;
           <th>Wire Dia</th>
           <th>Hori.Mesh</th>
           <th>Verti.Mesh</th>
-          <th>Actual Weight</th>
+          <th>Actual Weight (both Panel)</th>
           <th id="2result129"></th>
-          <th>Total/Outrigger Weldmesh Price</th>
+          <th>Total Outrigger Weldmesh Price (both Panel)</th>
         </tr>
       </thead>
       <tbody>
@@ -459,7 +464,7 @@ document.getElementById("finalResult11").innerText = finalResult9;
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <div class="tab-content active">
-    <h1>Internal Raw Material Sheet</h1>       
+    <h1>Actual Raw Material Sheet</h1>       
     <h2>User Details</h2>       
     <table id="finalResultsTable9" border="1" cellspacing="0" cellpadding="5">
       <thead>
@@ -491,7 +496,7 @@ document.getElementById("finalResult11").innerText = finalResult9;
         <tr>
           <th>Post Profile</th>
           <th>Main Height from FFL</th>
-          <th>Crank Length_incline</th>
+          <th>Crank Length_incline (both side)</th>
           <th>Burried from FFL</th>
           <th>Total Height</th>
           <th>Total Weight</th>
@@ -561,9 +566,9 @@ document.getElementById("finalResult11").innerText = finalResult9;
           <th>Wire Dia</th>
           <th>Hori.Mesh</th>
           <th>Verti.Mesh</th>
-          <th>Actual Weight</th>
+          <th>Actual Weight (both Panel)</th>
           <th id="2result130"></th>
-          <th>Total/Outrigger Weldmesh Price</th>
+          <th>Total Outrigger Weldmesh Price  (both Panel)</th>
         </tr>
       </thead>
       <tbody>
@@ -679,7 +684,7 @@ document.getElementById("finalResult11").innerText = finalResult9;
       <tr>
         <th>Total Post QTY</th>
         <th>Total Main WM Panel</th>
-        <th>Total Main Ourigg. Panel</th>
+        <th>Total Main Ourigg. Panel (both Panel)</th>
         <th>Total Main Grout. Panel</th>
         <th>Total Main Footting</th>
         <th>Accessories</th>  
@@ -1031,8 +1036,8 @@ document.getElementById("finalResult11").innerText = finalResult9;
     document.getElementById("result102").innerText = localStorage.getItem("result102Value") || "-";
     document.getElementById("result103").innerText = localStorage.getItem("result103Value") || "-";
     document.getElementById("result104").innerText = localStorage.getItem("result104Value") || "-"; 
-    document.getElementById("result106").innerText = localStorage.getItem("result106Value") || "-";
-      
+    document.getElementById("result106").innerText = localStorage.getItem("result106Value") || "-"; 
+    document.getElementById("post_qty_size").innerText = localStorage.getItem("result106Value") || "-"; 
 //pr
     document.getElementById("result107").innerText = localStorage.getItem("result107Value") || "No data"; 
     document.getElementById("result108").innerText = localStorage.getItem("result108Value") || "No data"; 
@@ -1054,9 +1059,9 @@ document.getElementById("finalResult11").innerText = finalResult9;
     document.getElementById("out_wm").innerText = localStorage.getItem("finalResult3") + finalResult4 || "-";
     document.getElementById("grt_wm").innerText = localStorage.getItem("finalResult5") + finalResult6 || "-";         
     document.getElementById("main_wm_qty1").textContent = localStorage.getItem("result70Value") || "No data"; 
-    document.getElementById("main_wm_qty2").textContent = localStorage.getItem("result70Value") || "No data"; 
+    document.getElementById("main_wm_qty2").textContent = localStorage.getItem("result70Value") * 2 || "No data"; 
     document.getElementById("main_wm_qty3").textContent = localStorage.getItem("result70Value") || "No data";            
-    document.getElementById("postqty").innerText = localStorage.getItem("result106Value")  || "-";
+
     document.getElementById("ftqty").innerText = localStorage.getItem("result69Value")  || "-";
     document.getElementById("ftqty1").innerText = localStorage.getItem("result69Value")  || "-";
     document.getElementById("color1").innerText = localStorage.getItem("result123Value")  || "-";
@@ -1130,7 +1135,7 @@ function exportExcel() {
   XLSX.utils.book_append_sheet(wb, ws, "All_Data");
 
 
-  XLSX.writeFile(wb, "POST_BURRIED_SINGLE_CRANK_GROUNTING_PANEL.xlsx");
+  XLSX.writeFile(wb, "POST_BURRIED_Y_CRANK_GROUNTING_PANEL.xlsx");
 }
 </script>
 </body>
@@ -1269,7 +1274,7 @@ function exportExcel() {
       <td>NO DATA</td>
       <td> <span id="postprofile2"></span><br> FABRICATION - GKW</td>
       <td>Nos</td>
-      <td><span id="postqty"></span></td>
+      <td><span id="post_qty_size"></span></td>
       <td><span id="color1"></span></td>
       <td><span id="finish1"></span></td>
       <td><span id="date1"></span></td>
